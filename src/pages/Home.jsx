@@ -1,14 +1,13 @@
-import React, { useState } from "react";
-
+import React from "react";
 
 import "./Home.css";
 import Navbar from "../components/Navbar";
 import Head from "../img/head-2.png";
 import CardProduk from "../components/CardProduk";
 import Btn from "../components/Btn";
-import dbProducts from "../db/dbProduk";
+import dbProduk from "../db/dbProduk";
 import Footer from "../components/Footer";
-
+import ComplexNavbar from "../components/Coba";
 
 function App() {
   const unPages =
@@ -16,28 +15,28 @@ function App() {
   const pages =
     "text-neutral-800 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400";
 
-    const defaultProps = {
-      center: {
-        lat: -7.435006,
-        lng: 109.250161
-      },
-      zoom: 15
-    };
+  const defaultProps = {
+    center: {
+      lat: -7.435006,
+      lng: 109.250161,
+    },
+    zoom: 15,
+  };
 
   return (
     <div className="container-fluid">
       {/* Navbar */}
       <Navbar
-        dashboardStyle={pages}
-        teamStyle={unPages}
-        projectStyle={unPages}
+        HomeStyle={pages}
+        ProdukStyle={unPages}
+        LayananStyle={unPages}
         FAQStyle={unPages}
         blogStyle={unPages}
       />
 
       {/* Header */}
       <section id="Header">
-        <div className="flex items-center mt-20 mb-20 bg-white max-md:flex-col md:max-lg:flex-col lg:flex-wrap">
+        <div className="flex relative items-center mt-20 mb-20 bg-white max-md:flex-col md:max-lg:flex-col lg:flex-wrap">
           <div className="flex-1 flex-col ml-20">
             <h1 className="leading-normal max-md:text-4xl md:max-lg:text-5xl lg:text-5xl w-10/12 mb-4 tracking-normal font-medium text-gray-900">
               Tempat Terbaik Mencetak Buku Yasin Terbaik, Murah dan Berkualitas
@@ -112,7 +111,7 @@ function App() {
             Produk
           </h2>
           <div className="flex flex-wrap justify-between max-md:mx-5 md:max-lg:mx-10 lg:mx-10 gap-7">
-            {dbProducts.slice(0, 3).map((dbProduct) => (
+            {dbProduk.slice(0, 3).map((dbProduct) => (
               <CardProduk
                 key={dbProduct.id}
                 srcProduk={dbProduct.media}
@@ -136,15 +135,33 @@ function App() {
         </div>
       </section>
 
+      {/* WhatsApps */}
+      <div className="">
+        <Btn
+          svg={
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+              />
+            </svg>
+          }
+          keterangan="WhatsApps"
+          Wa={true}
+          linkWa={true}
+        />
+      </div>
+
       {/* Footer */}
-      <Footer 
-        center={defaultProps.center}
-        zoom={defaultProps.zoom}
-      
-      />
-
-
-      
+      <Footer center={defaultProps.center} zoom={defaultProps.zoom} />
     </div>
   );
 }

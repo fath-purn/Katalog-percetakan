@@ -1,9 +1,7 @@
-import { ComposableMap, Geographies, Geography } from "react-simple-maps"
 import React from "react";
 import GoogleMapReact from 'google-map-react';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
 
   const defaultProps = {
     center: {
@@ -12,6 +10,8 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
     },
     zoom: 11
   };
+
+  const year = new Date().getFullYear();
 
 
 const geoUrl = "https://goo.gl/maps/jhdhvd447GyksXid9";
@@ -212,7 +212,7 @@ export default function Footer(props) {
                     <h6 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
                         Maps
                     </h6>
-                    <div className="h-64 w-64">
+                    <div className="h-72 max-md:w-full md:max-lg:w-fulllg:w-full">
                         <GoogleMapReact
                             bootstrapURLKeys={{ key: "" }}
                             defaultCenter={props.center}
@@ -231,12 +231,12 @@ export default function Footer(props) {
 
         {/* <!--Copyright section--> */}
         <div className="bg-cyan-600 p-6 text-white text-center dark:bg-neutral-700">
-            <span>© 2023 Copyright:</span>
+            <span>© {year} Copyright:</span>
             <a
                 className="font-semibold text-white dark:text-neutral-400"
                 href="https://tailwind-elements.com/"
             >
-                Tailwind Elements
+                Fatkhurrohman Purnomo
             </a>
         </div>
       </footer>
