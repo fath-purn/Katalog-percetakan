@@ -1,0 +1,105 @@
+.coba {
+    background-color: black;
+}
+
+/* Kelebihan */
+.container-fluid{
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.col-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+}
+
+.col-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+}
+
+.mt-3 {
+    margin-top: 1rem!important;
+}
+
+.pb-5 {
+    padding-bottom: 3rem!important;
+}
+.pt-5 {
+    padding-top: 3rem!important;
+}
+
+.kelebihan {
+    background: rgb(0, 124, 150);
+    background: linear-gradient(215deg, rgba(0, 124, 150, 1) 0%, rgba(0, 124, 150, 1) 35%, rgba(104, 177, 193, 1) 100%);
+    color: #fff;
+    border-radius: 0px 60px 0px 60px;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.kelebihan h2 {
+    font-weight: 600;
+    font-size: 2.8rem;
+    line-height: 60px;
+    text-align: center;
+}
+
+.kelebihan h3 {
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.kelebihan h6 {
+    font-size: 2rem;
+}
+
+.kelebihan p {
+    color: #ebe8e8;
+    font-size: 1.2rem;
+}
+
+.kelebihan-nomor {
+    position: relative;
+    color: rgb(0, 124, 150);
+    background-color: #fff;
+    width: 80px;
+    border-radius: 50%;
+    height: 80px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 49px;
+}
+
+.kelebihan-list {
+    width: 70%;
+    margin: 5% auto;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .kelebihan h2 {
+        font-weight: 600;
+        font-size: 2.5rem;
+        line-height: 60px;
+        text-align: center;
+        margin: 0 5%;
+    }
+
+}
