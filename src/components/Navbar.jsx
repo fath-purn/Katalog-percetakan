@@ -25,7 +25,7 @@ const Navbar = (props) => {
   return (
     // <!-- Main navigation container -->
     <nav
-      className="flex-no-wrap fixed top-0 flex w-full items-center justify-between bg-white py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-2"
+      className="flex-no-wrap fixed z-50 top-0 flex w-full items-center justify-between bg-white py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-2"
       data-te-navbar-ref
     >
       <div className="flex w-full flex-wrap items-center justify-between px-3">
