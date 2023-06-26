@@ -25,7 +25,7 @@ const CardProduk = (props) => {
         <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
           {props.deskripsi}
         </p>
-        <Btn keterangan={props.keterangan} href={props.href} />
+        <Btn keterangan={props.keterangan} href={props.href}/>
       </div>
     </div>
   );

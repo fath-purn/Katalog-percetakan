@@ -10,6 +10,13 @@ const Navbar = (props) => {
 
   const [cart, setCart] = useState([]);
 
+  // css
+  const unPages =
+    "text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400";
+  const pages =
+    "text-neutral-800 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400";
+
+
   function handlerCart(event) {
     event.preventDefault();
     setCart([...cart, event.target.value]);
@@ -69,14 +76,14 @@ const Navbar = (props) => {
           >
             <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
               {/* <!-- Dashboard link --> */}
-              <a className={props.HomeStyle} href="/Home" data-te-nav-link-ref>
+              <a className={props.HomeStyle ? pages : unPages} href="/Home" data-te-nav-link-ref>
                 Home
               </a>
             </li>
             {/* <!-- Team link --> */}
             <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
               <a
-                className={props.ProdukStyle}
+                className={props.ProdukStyle ? pages : unPages}
                 href="/Produk"
                 data-te-nav-link-ref
               >
@@ -86,7 +93,7 @@ const Navbar = (props) => {
             {/* <!-- Projects link --> */}
             <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
               <a
-                className={props.LayananStyle}
+                className={props.LayananStyle ? pages : unPages}
                 href="/Layanan"
                 data-te-nav-link-ref
               >
@@ -95,13 +102,13 @@ const Navbar = (props) => {
             </li>
             {/* <!-- FAQ --> */}
             <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-              <a className={props.FAQStyle} href="/FAQ" data-te-nav-link-ref>
+              <a className={props.FAQStyle ? pages : unPages} href="/FAQ" data-te-nav-link-ref>
                 FAQ
               </a>
             </li>
             {/* <!-- Blog --> */}
             <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-              <a className={props.blogStyle} href="/Blog" data-te-nav-link-ref>
+              <a className={props.blogStyle ? pages : unPages} href="/Blog" data-te-nav-link-ref>
                 Blog
               </a>
             </li>
