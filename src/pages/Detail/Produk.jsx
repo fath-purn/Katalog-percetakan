@@ -1,13 +1,13 @@
 import React from "react";
 
-import "./Home.css";
-import Navbar from "../components/Navbar";
-import CardProduk from "../components/CardProduk";
-import dbProduk from "../db/dbProduk";
-import Footer from "../components/Footer";
-import Btn from "../components/Btn";
+import "../Home.css";
+import Navbar from "../../components/Navbar";
+import CardProduk from "../../components/CardProduk";
+import dbProduk from "../../db/dbProduk";
+import Footer from "../../components/Footer";
+import Btn from "../../components/Btn";
 
-export default function Produk() {
+export default function DetailProduk() {
   const defaultProps = {
     center: {
       lat: -7.435006,
@@ -38,7 +38,7 @@ export default function Produk() {
                 namaProduk={dbProduct.namaProduk}
                 harga={dbProduct.harga}
                 deskripsi={dbProduct.deskripsi.substring(0, 100)}
-                keterangan="Pesan Sekarang"
+                keterangan="Detail"
                 href="#"
               />
             ))}

@@ -8,7 +8,7 @@ import Btn from "../components/Btn";
 import dbProduk from "../db/dbProduk";
 import Footer from "../components/Footer";
 
-function App() {
+function Home() {
   const defaultProps = {
     center: {
       lat: -7.435006,
@@ -140,4 +140,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

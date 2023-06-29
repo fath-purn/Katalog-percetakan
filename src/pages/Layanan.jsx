@@ -8,6 +8,14 @@ import Btn from "../components/Btn";
 
 
 export default function Layanan (props) { 
+    const defaultProps = {
+        center: {
+          lat: -7.435006,
+          lng: 109.250161,
+        },
+        zoom: 15,
+    };
+    
     return (
         <div className="container-fluid relative md:max-lg:top-2 lg:top-7">
             <Navbar LayananStyle={true} />

@@ -65,7 +65,7 @@ const Navbar = (props) => {
           {/* <!-- Logo --> */}
           <a
             className="mb-4 mr-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
-            href="#"
+            href="/"
           >
             <img src={Logo} className="w-12  h-12" alt="" loading="lazy" />
           </a>
@@ -76,7 +76,7 @@ const Navbar = (props) => {
           >
             <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
               {/* <!-- Dashboard link --> */}
-              <a className={props.HomeStyle ? pages : unPages} href="/Home" data-te-nav-link-ref>
+              <a className={props.HomeStyle ? pages : unPages} href="/" data-te-nav-link-ref>
                 Home
               </a>
             </li>
@@ -84,7 +84,7 @@ const Navbar = (props) => {
             <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
               <a
                 className={props.ProdukStyle ? pages : unPages}
-                href="/Produk"
+                href="/produk"
                 data-te-nav-link-ref
               >
                 Produk
@@ -94,7 +94,7 @@ const Navbar = (props) => {
             <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
               <a
                 className={props.LayananStyle ? pages : unPages}
-                href="/Layanan"
+                href="/layanan"
                 data-te-nav-link-ref
               >
                 Layanan
@@ -102,13 +102,13 @@ const Navbar = (props) => {
             </li>
             {/* <!-- FAQ --> */}
             <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-              <a className={props.FAQStyle ? pages : unPages} href="/FAQ" data-te-nav-link-ref>
+              <a className={props.FAQStyle ? pages : unPages} href="/faq" data-te-nav-link-ref>
                 FAQ
               </a>
             </li>
             {/* <!-- Blog --> */}
             <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-              <a className={props.blogStyle ? pages : unPages} href="/Blog" data-te-nav-link-ref>
+              <a className={props.blogStyle ? pages : unPages} href="/blog" data-te-nav-link-ref>
                 Blog
               </a>
             </li>
