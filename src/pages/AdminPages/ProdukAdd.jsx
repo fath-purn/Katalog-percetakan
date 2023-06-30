@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {useNavigate  }  from "react-router-dom";
 import axios from "axios";
-import {Input, initTE} from "tw-elements";
+// import {Input, initTE} from "tw-elements";
 
 
 import AdminInput from "../../components/AdminInput";
@@ -18,7 +18,7 @@ const ProdukAdd = () => {
     const [file, setFile] = useState("");
     const [preview, setPreview] = useState("");
 
-    initTE({ Input });
+    // initTE({ Input });
 
     const loadImage = (e) => {
         const image = e.target.files[0];
