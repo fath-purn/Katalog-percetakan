@@ -15,8 +15,6 @@ import ProdukList from "./AdminPages/ProdukList";
 import ProdukAdd from "./AdminPages/ProdukAdd";
 import ProdukEdit from "./AdminPages/ProdukEdit";
 
-// import LoginForm from "./AdminPages/Login";
-
 // layanan
 import LayananList from "./AdminPages/LayananList"; 
 import LayananAdd from "./AdminPages/LayananAdd";
@@ -26,17 +24,34 @@ import LayananEdit from "./AdminPages/LayananEdit";
 import BlogList from "./AdminPages/BlogList";
 import BlogAdd from "./AdminPages/BlogAdd";
 import BlogEdit from "./AdminPages/BlogEdit";
+import DetailBlog from "./Detail/Blog";
+import DetailProduk from "./Detail/Produk";
+import DetailLayanan from "./Detail/Layanan";
 
 function App() {
     return (
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
+                
+                {/* Produk */}
                 <Route path="/produk" element={<Produk/>} />
+                <Route path="/produk/detail/:id" element={<DetailProduk/>} />
+                
+                {/* Layanan */}
                 <Route path="/layanan" element={<Layanan />} />
+                <Route path="/layanan/detail/:id" element={<DetailLayanan/>} />
+                
+                {/* FAQ */}
                 <Route path="/faq" element={<FAQ/>} />
+                
+                {/* Blog */}
                 <Route path="/blog" element={<Blog/>} />
+                <Route path="/blog/detail/:id" element={<DetailBlog />} />
+                
                 <Route path="/*" element={<Produk/>} />
+
+
 
                 {/* Login */}
                 {/* <Route path="/login" element={<LoginForm />} /> */}
@@ -49,6 +64,7 @@ function App() {
                 <Route path="/admin/produk" element={<ProdukList />} />
                 <Route path="/admin/produk/addproduk" element={<ProdukAdd />} />
                 <Route path="/admin/produk/editproduk/:id" element={<ProdukEdit />} />
+
 
                 {/* Layanan */}
                 <Route path="/admin/layanan" element={<LayananList />} />

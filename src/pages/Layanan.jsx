@@ -49,6 +49,7 @@ export default function Layanan (props) {
                             Media={layanan.url}
                             Judul={layanan.nama}
                             Deskripsi={layanan.deskripsi}
+                            href={`layanan/detail/${layanan.id}`}
                         />
                     </div>
                 ))}

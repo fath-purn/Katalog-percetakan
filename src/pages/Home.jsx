@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import axios from 'axios';
+
 
 import "./Home.css";
 import Navbar from "../components/Navbar";
 import Head from "../img/head-2.png";
 import CardProduk from "../components/CardProduk";
 import Btn from "../components/Btn";
-import dbProduk from "../db/dbProduk";
 import Footer from "../components/Footer";
 
 function Home() {
@@ -15,6 +16,22 @@ function Home() {
       lng: 109.250161,
     },
     zoom: 15,
+  };
+
+  // server
+  const [produk, setProduk] = useState([]);
+    
+  useEffect(() => {
+      getProduk();
+  }, []);
+    
+  const getProduk = async () => {
+    try {
+        const response = await axios.get("http://localhost:3000/products");
+        setProduk(response.data);
+    } catch (error) {
+        console.error(error);
+    }
   };
 
   return (
@@ -101,22 +118,22 @@ function Home() {
             Produk
           </h2>
           <div className="flex flex-wrap justify-between max-md:mx-5 md:max-lg:mx-10 lg:mx-10 gap-7">
-            {dbProduk.slice(0, 3).map((dbProduct) => (
+            {produk.slice(0, 3).map((dbProduct) => (
               <CardProduk
                 key={dbProduct.id}
-                srcProduk={dbProduct.media}
-                alt={dbProduct.namaProduk}
-                namaProduk={dbProduct.namaProduk}
+                srcProduk={dbProduct.url}
+                alt={dbProduct.nama}
+                namaProduk={dbProduct.nama}
                 harga={dbProduct.harga}
                 deskripsi={dbProduct.deskripsi.substring(0, 100)}
-                keterangan="Detail"
-                href="#"
+                keterangan="Pesan Sekarang"
+                href={`produk/detail/${dbProduct.id}`}
               />
             ))}
           </div>
           <div className="flex justify-center mt-5">
             <a
-              href="#"
+              href="/produk"
               className="text-center text-cyan-700 text-[16px] font-light"
             >
               Produk Lainnya

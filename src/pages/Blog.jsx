@@ -48,6 +48,7 @@ export default function Blog (props) {
                             Media={blog.url}
                             Judul={blog.nama}
                             Deskripsi={blog.BlogDeskripsi}
+                            href={`blog/detail/${blog.id}`}
                         />
                     </div>
                 ))}

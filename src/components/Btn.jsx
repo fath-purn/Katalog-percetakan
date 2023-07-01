@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Btn(props) {
   return (
-    <a
-      href={
+    <Link
+      to={
         props.Wa === true
         ? "https://api.whatsapp.com/send/?phone=%2B6285155040590&text=Hi%21+Saya+ingin+bertanya&type=phone_number&app_absent=0"
         : props.href
@@ -30,6 +31,6 @@ export default function Btn(props) {
         />
       </svg>}
       {props.keterangan}
-    </a>
+    </Link>
   );
 }
