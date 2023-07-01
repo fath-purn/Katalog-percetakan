@@ -1,29 +1,53 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import axios from 'axios';
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import CardBlog from "../components/CardBlog";
-import dbBlog from "../db/dbBlog";
+import CardLayanan from "../components/CardLayanan";
 import Btn from "../components/Btn";
 
 
-export default function Layanan (props) { 
+export default function Blog (props) { 
+    const defaultProps = {
+        center: {
+          lat: -7.435006,
+          lng: 109.250161,
+        },
+        zoom: 15,
+    };
+
+    // server
+    const [blog, setBlog] = useState([]);
+        
+    useEffect(() => {
+        getBlog();
+    }, []);
+    
+    const getBlog = async () => {
+        try {
+            const response = await axios.get("http://localhost:3000/blog");
+            setBlog(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return (
         <div className="container-fluid relative md:max-lg:top-2 lg:top-7">
-            <Navbar LayananStyle={true} />
+            <Navbar BlogStyle={true} />
 
             <div className="mt-20">
                 <h2 className="mb-10 text-4xl text-center text-cyan-700 font-semibold">
                     Blog
                 </h2>
 
-                {dbBlog.slice().map((blog) => (
+                {blog.slice().map((blog) => (
                     <div className="flex justify-center max-md:my-5 md:max-lg:my-10 lg:my-10 max-md:mx-5 md:max-lg:mx-10">
-                        <CardBlog 
+                        <CardLayanan 
                             key={blog.id}
-                            Media={blog.BlogMedia}
-                            Judul={blog.BlogJudul}
-                            Deskripsi={blog.BlogDeskripsi.substring(0, 100)}
+                            Media={blog.url}
+                            Judul={blog.nama}
+                            Deskripsi={blog.BlogDeskripsi}
                         />
                     </div>
                 ))}
@@ -37,7 +61,8 @@ export default function Layanan (props) {
                 />
             </div>
 
-            <Footer />
+            {/* Footer */}
+            <Footer center={defaultProps.center} zoom={defaultProps.zoom} />
         </div>
     )
  }

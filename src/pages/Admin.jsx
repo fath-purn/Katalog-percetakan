@@ -263,7 +263,7 @@ const Admin = () => {
                         {/* Tampil Blog */}
                         <li>
                         <a
-                            href="/admin/produk"
+                            href="/admin/blog"
                             className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                         >
                             Tampil Blog
@@ -273,7 +273,7 @@ const Admin = () => {
                         {/* Tambah Blog */}
                         <li>
                         <a
-                            href="/admin/produk/addproduk"
+                            href="/admin/produk/addblog"
                             className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                         >
                             Tambah Blog
@@ -329,7 +329,7 @@ const Admin = () => {
                         {/* Tampil FAQ */}
                         <li>
                         <a
-                            href="/admin/produk"
+                            href="/admin/faq"
                             className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                         >
                             Tampil FAQ
@@ -339,7 +339,7 @@ const Admin = () => {
                         {/* Tambah FAQ */}
                         <li>
                         <a
-                            href="/admin/produk/addproduk"
+                            href="/admin/produk/addfaq"
                             className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                         >
                             Tambah FAQ

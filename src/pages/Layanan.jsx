@@ -4,7 +4,6 @@ import axios from 'axios';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CardLayanan from "../components/CardLayanan";
-import dbLayanan from "../db/dbLayanan";
 import Btn from "../components/Btn";
 
 

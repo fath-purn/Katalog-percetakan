@@ -22,6 +22,11 @@ import LayananList from "./AdminPages/LayananList";
 import LayananAdd from "./AdminPages/LayananAdd";
 import LayananEdit from "./AdminPages/LayananEdit";
 
+// Blog
+import BlogList from "./AdminPages/BlogList";
+import BlogAdd from "./AdminPages/BlogAdd";
+import BlogEdit from "./AdminPages/BlogEdit";
+
 function App() {
     return (
         <Router>
@@ -51,9 +56,9 @@ function App() {
                 <Route path="/admin/layanan/editlayanan/:id" element={<LayananEdit />} />
 
                 {/* Blog */}
-                {/* <Route path="/admin/blog" element={<BlogList />} />
+                <Route path="/admin/blog" element={<BlogList />} />
                 <Route path="/admin/blog/addblog" element={<BlogAdd />} />
-                <Route path="/admin/blog/editblog/:id" element={<BlogEdit />} /> */}
+                <Route path="/admin/blog/editblog/:id" element={<BlogEdit />} />
 
                 {/* FAQ */}
                 {/* <Route path="/admin/faq" element={<FAQList />} />
