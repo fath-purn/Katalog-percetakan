@@ -15,6 +15,13 @@ import ProdukList from "./AdminPages/ProdukList";
 import ProdukAdd from "./AdminPages/ProdukAdd";
 import ProdukEdit from "./AdminPages/ProdukEdit";
 
+// import LoginForm from "./AdminPages/Login";
+
+// layanan
+import LayananList from "./AdminPages/LayananList"; 
+import LayananAdd from "./AdminPages/LayananAdd";
+import LayananEdit from "./AdminPages/LayananEdit";
+
 function App() {
     return (
         <Router>
@@ -26,6 +33,10 @@ function App() {
                 <Route path="/blog" element={<Blog/>} />
                 <Route path="/*" element={<Produk/>} />
 
+                {/* Login */}
+                {/* <Route path="/login" element={<LoginForm />} /> */}
+
+
                 {/* Admin */}
                 <Route path="/admin" element={<Admin />} />
 
@@ -36,18 +47,18 @@ function App() {
 
                 {/* Layanan */}
                 <Route path="/admin/layanan" element={<LayananList />} />
-                <Route path="/admin/produk/addlayanan" element={<LayananAdd />} />
-                <Route path="/admin/produk/editlayanan/:id" element={<LayananEdit />} />
+                <Route path="/admin/layanan/addlayanan" element={<LayananAdd />} />
+                <Route path="/admin/layanan/editlayanan/:id" element={<LayananEdit />} />
 
                 {/* Blog */}
-                <Route path="/admin/blog" element={<BlogList />} />
-                <Route path="/admin/produk/addblog" element={<BlogAdd />} />
-                <Route path="/admin/produk/editblog/:id" element={<BlogEdit />} />
+                {/* <Route path="/admin/blog" element={<BlogList />} />
+                <Route path="/admin/blog/addblog" element={<BlogAdd />} />
+                <Route path="/admin/blog/editblog/:id" element={<BlogEdit />} /> */}
 
                 {/* FAQ */}
-                <Route path="/admin/faq" element={<FAQList />} />
-                <Route path="/admin/produk/addfaq" element={<FAQAdd />} />
-                <Route path="/admin/produk/editfaq/:id" element={<FAQEdit />} />
+                {/* <Route path="/admin/faq" element={<FAQList />} />
+                <Route path="/admin/faq/addfaq" element={<FAQAdd />} />
+                <Route path="/admin/faq/editfaq/:id" element={<FAQEdit />} /> */}
 
             </Routes>
         </Router>

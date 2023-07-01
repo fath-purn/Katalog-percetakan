@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import {useNavigate, useParams  }  from "react-router-dom";
 import axios from "axios";
-import {
-  Input,
-  initTE,
-} from "tw-elements";
 
 
 import AdminInput from "../../components/AdminInput";
@@ -12,28 +8,20 @@ import AdminTextArea from "../../components/AdminTextArea";
 import AdminInputImage from "../../components/AdminInputImage";
 import MyButton from "../../components/MyButton";
 
-const ProdukEdit = () => {
+const LayananEdit = () => {
     const [nama, setNama] = useState("");
     const [deskripsi, setDeskripsi] = useState("");
-    const [harga, setHarga] = useState();
-    const [kategori, setKategori] = useState("");
-    const [ulasan, setUlasan] = useState("");
     const [file, setFile] = useState("");
     const [preview, setPreview] = useState("");
 
-    initTE({ Input });
-
     useEffect(() => {
-        getProdukById();
+        getLayananById();
     }, []);
 
-    const getProdukById = async () => {
-        const response = await axios.get(`http://localhost:3000/products/${id}`);
+    const getLayananById = async () => {
+        const response = await axios.get(`http://localhost:3000/layanan/${id}`);
         setNama(response.data.nama);
         setDeskripsi(response.data.deskripsi);
-        setHarga(response.data.harga);
-        setKategori(response.data.kategori);
-        setUlasan(response.data.ulasan);
         setFile(response.data.image);
         setPreview(response.data.url);
     }
@@ -44,22 +32,19 @@ const ProdukEdit = () => {
         setPreview(URL.createObjectURL(image));
     };
 
-    const updateProduk = async (e) => {
+    const updateLayanan = async (e) => {
         e.preventDefault();
         const formData = new FormData();
         formData.append("nama", nama);
         formData.append("deskripsi", deskripsi);
-        formData.append("harga", harga);
-        formData.append("kategori", kategori);
-        formData.append("ulasan", ulasan);
         formData.append("file", file);
         try {
-          await axios.patch(`http://localhost:3000/products/${id}`, formData, {
+          await axios.patch(`http://localhost:3000/layanan/${id}`, formData, {
             headers: {
                 "Content-type": "multipart/form-data",
               },
           });
-          navigate("/admin/produk");
+          navigate("/admin/layanan");
         } catch (error) {
           console.log(error);
         }
@@ -70,8 +55,8 @@ const ProdukEdit = () => {
 
     return (
         <div className="flex flex-col px-[20%] my-5">
-            <h2 className="text-4xl py-5 text-center">Edit Produk</h2>
-            <form onSubmit={updateProduk}>
+            <h2 className="text-4xl py-5 text-center">Edit Layanan</h2>
+            <form onSubmit={updateLayanan}>
                 <AdminInput 
                     value = {nama}
                     onChange = {(e) => setNama(e.target.value)}
@@ -95,24 +80,6 @@ const ProdukEdit = () => {
                     placeholder = "Deskripsi"
                     label = "Deskripsi"
                 />
-                <AdminInput 
-                    value = {harga}
-                    onChange = {(e) => setHarga(e.target.value)}
-                    placeholder = "Harga"
-                    label = "Harga"
-                />
-                <AdminInput 
-                    value = {kategori}
-                    onChange = {(e) => setKategori(e.target.value)}
-                    placeholder = "Kategori"
-                    label = "Kategori"
-                />
-                <AdminInput 
-                    value = {ulasan}
-                    onChange = {(e) => setUlasan(e.target.value)}
-                    placeholder = "Ulasan"
-                    label = "Ulasan"
-                />
                 <MyButton
                     keterangan = "submit"
                 />
@@ -121,4 +88,4 @@ const ProdukEdit = () => {
     )
 }
 
-export default ProdukEdit;
+export default LayananEdit;

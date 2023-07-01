@@ -22,9 +22,9 @@ const Admin = () => {
                 fill="currentColor"
                 className="h-5 w-5">
                 <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-                    clip-rule="evenodd" />
+                    clipRule="evenodd" />
                 </svg>
             </span>
             </button>
@@ -34,7 +34,7 @@ const Admin = () => {
         <div
             id="drawer-navigation"
             className="fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800"
-            tabindex="-1"
+            tabIndex="-1"
             aria-labelledby="drawer-navigation-label"
         >
             <h5
@@ -57,9 +57,9 @@ const Admin = () => {
                 xmlns="http://www.w3.org/2000/svg"
             >
                 <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
                 ></path>
             </svg>
             <span className="sr-only">Close menu</span>
@@ -105,9 +105,9 @@ const Admin = () => {
                             xmlns="http://www.w3.org/2000/svg"
                         >
                             <path
-                                fill-rule="evenodd"
+                                fillRule="evenodd"
                                 d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
-                                clip-rule="evenodd"
+                                clipRule="evenodd"
                             ></path>
                         </svg>
                         <span className="flex-1 ml-3 text-left whitespace-nowrap">
@@ -122,9 +122,9 @@ const Admin = () => {
                             xmlns="http://www.w3.org/2000/svg"
                         >
                         <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                         ></path>
                         </svg>
                     </button>
@@ -184,9 +184,9 @@ const Admin = () => {
                             xmlns="http://www.w3.org/2000/svg"
                         >
                         <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                         ></path>
                         </svg>
                     </button>
@@ -197,7 +197,7 @@ const Admin = () => {
                         {/* Tampil Layanan */}
                         <li>
                         <a
-                            href="/admin/produk"
+                            href="/admin/layanan"
                             className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                         >
                             Tampil Layanan
@@ -207,7 +207,7 @@ const Admin = () => {
                         {/* Tambah Layanan */}
                         <li>
                         <a
-                            href="/admin/produk/addproduk"
+                            href="/admin/produk/addlayanan"
                             className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                         >
                             Tambah Layanan
@@ -233,9 +233,9 @@ const Admin = () => {
                             xmlns="http://www.w3.org/2000/svg"
                             >
                             <path
-                                fill-rule="evenodd"
+                                fillRule="evenodd"
                                 d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
-                                clip-rule="evenodd"
+                                clipRule="evenodd"
                             ></path>
                         </svg>
                         <span className="flex-1 ml-3 text-left whitespace-nowrap">
@@ -250,9 +250,9 @@ const Admin = () => {
                             xmlns="http://www.w3.org/2000/svg"
                         >
                         <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                         ></path>
                         </svg>
                     </button>
@@ -299,9 +299,9 @@ const Admin = () => {
                             xmlns="http://www.w3.org/2000/svg"
                             >
                             <path
-                                fill-rule="evenodd"
+                                fillRule="evenodd"
                                 d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                                clip-rule="evenodd"
+                                clipRule="evenodd"
                             ></path>
                         </svg>
                         <span className="flex-1 ml-3 text-left whitespace-nowrap">
@@ -316,9 +316,9 @@ const Admin = () => {
                             xmlns="http://www.w3.org/2000/svg"
                         >
                         <path
-                            fill-rule="evenodd"
+                            fillRule="evenodd"
                             d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd"
+                            clipRule="evenodd"
                         ></path>
                         </svg>
                     </button>

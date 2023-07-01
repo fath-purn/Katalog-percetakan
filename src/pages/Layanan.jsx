@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import axios from 'axios';
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -16,8 +17,25 @@ export default function Layanan (props) {
         zoom: 15,
     };
     
+    // server
+    const [layanan, setLayanan] = useState([]);
+        
+    useEffect(() => {
+        getLayanan();
+    }, []);
+    
+    const getLayanan = async () => {
+        try {
+            const response = await axios.get("http://localhost:3000/layanan");
+            setLayanan(response.data);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+
     return (
-        <div className="container-fluid relative md:max-lg:top-2 lg:top-7">
+        <div className="container-fluid relative md:max-lg:top-2 lg:top-7 ">
             <Navbar LayananStyle={true} />
 
             <div className="mt-20">
@@ -25,13 +43,13 @@ export default function Layanan (props) {
                     Layanan
                 </h2>
 
-                {dbLayanan.slice().map((layanan) => (
+                {layanan.slice().map((layanan) => (
                     <div className="flex justify-center max-md:my-5 md:max-lg:my-10 lg:my-10 max-md:mx-5 md:max-lg:mx-10">
                         <CardLayanan 
                             key={layanan.id}
-                            Media={layanan.Media}
-                            Judul={layanan.Judul}
-                            Deskripsi={layanan.Deskripsi.substring(0, 100)}
+                            Media={layanan.url}
+                            Judul={layanan.nama}
+                            Deskripsi={layanan.deskripsi}
                         />
                     </div>
                 ))}
@@ -44,8 +62,9 @@ export default function Layanan (props) {
                     linkWa={true}
                 />
             </div>
-
-            <Footer />
+            
+            {/* Footer */}
+            <Footer center={defaultProps.center} zoom={defaultProps.zoom} />
         </div>
     )
  }
