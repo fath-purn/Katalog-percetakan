@@ -195,13 +195,13 @@ export default function Footer(props) {
                         Informasi
                     </h6>
                     <p className="mb-4">
-                        <a href="#!" className="text-cyan-700 dark:text-neutral-200">
+                        <a href="/blog" className="text-cyan-700 dark:text-neutral-200">
                         Blog
                         </a>
                     </p>
                     <p className="mb-4">
-                        <a href="#!" className="text-cyan-700 dark:text-neutral-200">
-                        Cara Pemesanan
+                        <a href="/layanan" className="text-cyan-700 dark:text-neutral-200">
+                        Layanan
                         </a>
                     </p>
                     

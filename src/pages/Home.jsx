@@ -42,9 +42,9 @@ function Home() {
       />
 
       {/* Header */}
-      <section id="Header">
-        <div className="flex  items-center mt-20 mb-20 bg-white max-md:flex-col md:max-lg:flex-col lg:flex-wrap">
-          <div className="flex-1 flex-col ml-20">
+      <section id="Header ">
+        <div className="flex  items-center my-20 bg-white max-md:flex-col md:max-lg:flex-col lg:flex-wrap">
+          <div className="flex-1 flex-col max-md:mx-5 md:ml-20">
             <h1 className="leading-normal max-md:text-4xl md:max-lg:text-5xl lg:text-5xl w-10/12 mb-4 tracking-normal font-medium text-gray-900">
               Tempat Terbaik Mencetak Buku Yasin Terbaik, Murah dan Berkualitas
               !!
@@ -112,7 +112,7 @@ function Home() {
       </section>
 
       {/* Produk */}
-      <section id="Produk">
+      <section id="Produk" >
         <div className="my-20">
           <h2 className="mb-10 text-4xl text-center text-cyan-700 font-semibold">
             Produk
