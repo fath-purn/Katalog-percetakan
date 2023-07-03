@@ -8,6 +8,7 @@ import Btn from "../components/Btn";
 
 
 export default function Layanan (props) { 
+    // Maps
     const defaultProps = {
         center: {
           lat: -7.435006,
@@ -27,6 +28,7 @@ export default function Layanan (props) {
         try {
             const response = await axios.get("http://localhost:3000/layanan");
             setLayanan(response.data);
+            console.log(response.data);
         } catch (error) {
             console.error(error);
         }
@@ -48,8 +50,9 @@ export default function Layanan (props) {
                             key={layanan.id}
                             Media={layanan.url}
                             Judul={layanan.nama}
-                            Deskripsi={layanan.deskripsi}
+                            Deskripsi={layanan.deskripsi.substring(0, 100)}
                             href={`layanan/detail/${layanan.id}`}
+                            time={layanan.updatedAt}
                         />
                     </div>
                 ))}

@@ -1,8 +1,8 @@
 import React from "react"
-
-import Btn from "./Btn"
+import dayjs from 'dayjs';
 
 export default function CardLayanan(props){
+    const formattedUpdate = (time) => dayjs(time).format("DD MMMM YYYY, HH:mm:ss");
     return (
         <a href={props.href} className="flex flex-col max-md:min-w-[100%] md:max-lg:min-w-[70%] lg:min-w-[50%] rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 md:max-w-xl md:flex-row" >
             <img
@@ -18,7 +18,7 @@ export default function CardLayanan(props){
                 {props.Deskripsi}...
                 </p>
                 <p className="text-xs text-neutral-500 dark:text-neutral-300">
-                Last updated 3 mins ago
+                Last update: {formattedUpdate(props.time)}
                 </p>
             </div>
         </a>

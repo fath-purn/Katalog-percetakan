@@ -53,7 +53,7 @@ const LayananList = () => {
                                             <img src={layanan.url} alt="Image" />
                                         </figure>
                                     </td>
-                                    <td className="whitespace-nowrap px-6 py-4 font-medium">{ layanan.deskripsi }</td>
+                                    <td className="whitespace-nowrap px-6 py-4 font-medium">{ layanan.deskripsi.substring(0, 100) }</td>
                                     <th className="whitespace-nowrap px-6 py-4 font-medium">
                                         <div className="flex">
                                         <Link to={`editlayanan/${layanan.id}`} className="w-20 h-8 mr-2 flex items-center justify-center rounded-md text-white bg-green-500 hover:bg-green-400">Edit</Link>

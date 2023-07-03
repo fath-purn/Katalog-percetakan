@@ -9,6 +9,9 @@ import AdminInputImage from "../../components/AdminInputImage";
 import MyButton from "../../components/MyButton";
 
 const LayananEdit = () => {
+    const navigate = useNavigate();
+    const { id } = useParams();
+
     const [nama, setNama] = useState("");
     const [deskripsi, setDeskripsi] = useState("");
     const [file, setFile] = useState("");
@@ -50,9 +53,7 @@ const LayananEdit = () => {
         }
       };
       
-    const navigate = useNavigate();
-    const { id } = useParams();
-
+    
     return (
         <div className="flex flex-col px-[20%] my-5">
             <h2 className="text-4xl py-5 text-center">Edit Layanan</h2>

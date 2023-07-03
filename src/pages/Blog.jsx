@@ -47,7 +47,7 @@ export default function Blog (props) {
                             key={blog.id}
                             Media={blog.url}
                             Judul={blog.nama}
-                            Deskripsi={blog.BlogDeskripsi}
+                            Deskripsi={blog.BlogDeskripsi.substring(0, 100)}
                             href={`blog/detail/${blog.id}`}
                         />
                     </div>

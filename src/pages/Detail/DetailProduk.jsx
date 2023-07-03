@@ -94,10 +94,10 @@ export default function DetailProduk() {
               </div>
             </div>
             <div className="max-md:m-5 md:max-lg:my-5 max-md:mx-5 md:max-lg:mx-10 lg:mx-10 max-md:w-full lg:w-[40%] h-auto ">
-              <BreadCrumb keterangan={nama.substring(0, 30)} />
-              <p className="text-justify text-cyan-700 my-2">{kategori}</p>
+              <BreadCrumb keterangan={nama.substring(0, 30)} menu="Produk" />
+              <p className=" text-cyan-700 my-2">{kategori}</p>
               <h2 className="mb-5 text-4xl font-semibold">{nama}</h2>
-              <h3 className="text-justify text-2xl mb-5">
+              <h3 className="text-2xl mb-5">
                 Rp {handlePrice(harga)}
               </h3>
               <div class="flex items-center">
@@ -109,11 +109,11 @@ export default function DetailProduk() {
                   <p class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">4.95 out of 5</p>
               </div>
             </div>
-            <p className="text-justify max-md:mx-5 md:max-lg:mx-10 lg:mx-10 lg:mt-5 text-gray-500">{deskripsi}</p>
+            <p className="max-md:mx-5 md:max-lg:mx-10 lg:mx-10 lg:mt-5 text-gray-500">{deskripsi}</p>
             
             {/* Produk lain */}
             <div className="max-md:mx-5 md:max-lg:mx-10 lg:mx-10 mt-10">
-              <h2 className="mb-5 max-md:text-2xl md:text-3xl text-center text-cyan-700 font-semibold">Produk Lainnya</h2>
+              <h2 className="mb-5 max-md:text-2xl md:text-3xl text-center text-cyan-700 font-semibold">Produk </h2>
             </div>
             <div className="flex flex-wrap justify-between max-md:mx-5 md:max-lg:mx-10 lg:mx-10 gap-7">
             {produk.slice(0, 3).map((dbProduct) => (
