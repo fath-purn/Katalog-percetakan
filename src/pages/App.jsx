@@ -24,9 +24,16 @@ import LayananEdit from "./AdminPages/LayananEdit";
 import BlogList from "./AdminPages/BlogList";
 import BlogAdd from "./AdminPages/BlogAdd";
 import BlogEdit from "./AdminPages/BlogEdit";
-import DetailBlog from "./Detail/Blog";
-import DetailProduk from "./Detail/Produk";
-import DetailLayanan from "./Detail/Layanan";
+
+// FAQ
+import FAQList from "./AdminPages/FAQList";
+import FAQAdd from "./AdminPages/FAQAdd";
+import FAQEdit from "./AdminPages/FAQEdit";
+
+// Detail
+import DetailBlog from "./Detail/DetailBlog";
+import DetailProduk from "./Detail/DetailProduk";
+import DetailLayanan from "./Detail/DetailLayanan";
 
 function App() {
     return (
@@ -77,9 +84,9 @@ function App() {
                 <Route path="/admin/blog/editblog/:id" element={<BlogEdit />} />
 
                 {/* FAQ */}
-                {/* <Route path="/admin/faq" element={<FAQList />} />
+                <Route path="/admin/faq" element={<FAQList />} />
                 <Route path="/admin/faq/addfaq" element={<FAQAdd />} />
-                <Route path="/admin/faq/editfaq/:id" element={<FAQEdit />} /> */}
+                <Route path="/admin/faq/editfaq/:id" element={<FAQEdit />} />
 
             </Routes>
         </Router>

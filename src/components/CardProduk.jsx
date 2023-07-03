@@ -23,7 +23,7 @@ const CardProduk = (props) => {
           Rp {props.harga},-
         </h5>
         <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-          {props.deskripsi}
+          {props.deskripsi}...
         </p>
         <Btn keterangan={props.keterangan} href={props.href}/>
       </div>

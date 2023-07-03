@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
+import AdminHeader from '../../components/AdminHeader';
 
 const LayananList = () => {
     const [layanan, setLayanan] = useState([]);
@@ -31,9 +32,7 @@ const LayananList = () => {
     return (
         <div>
             <div className="flex flex-col justify-center">
-                <Link to={`addlayanan`} className="w-20 h-8 m-5 flex items-center justify-center rounded-md text-white bg-green-500 hover:bg-green-400">
-                    Add New
-                </Link>
+                <AdminHeader to1="addlayanan" keterangan="Layanan"/>
                 <table className="min-w-full text-left text-sm font-light table-fixed">
                     <thead className="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
                         <tr>

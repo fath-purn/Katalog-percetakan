@@ -1,7 +1,10 @@
+import axios from 'axios';
+
 import React from "react"
 import dbFAQ from "../db/dbFAQ";
 
 export default function CardFAQ(props){
+    
     return (
         <div>
             {/* <!-- Container for demo purpose --> */}

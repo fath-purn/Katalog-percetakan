@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
+import AdminHeader from "../../components/AdminHeader";
 
 const BlogList = () => {
     const [blog, setBlog] = useState([]);
@@ -12,7 +13,7 @@ const BlogList = () => {
     
     const getBlog = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/Blog");
+            const response = await axios.get("http://localhost:3000/blog");
             setBlog(response.data);
         } catch (error) {
             console.error(error);
@@ -31,9 +32,7 @@ const BlogList = () => {
     return (
         <div>
             <div className="flex flex-col justify-center">
-                <Link to={`addblog`} className="w-20 h-8 m-5 flex items-center justify-center rounded-md text-white bg-green-500 hover:bg-green-400">
-                    Add New
-                </Link>
+                <AdminHeader to1="addblog" keterangan="Blog"/>
                 <table className="min-w-full text-left text-sm font-light table-fixed">
                     <thead className="border-b bg-white font-medium dark:border-neutral-500 dark:bg-neutral-600">
                         <tr>

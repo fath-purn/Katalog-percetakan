@@ -95,6 +95,7 @@ const ProdukAdd = () => {
                     label = "Ulasan"
                 />
                 <MyButton keterangan="Save" />
+                <MyButton keterangan="Back" />
             </form>
         </div>
     )

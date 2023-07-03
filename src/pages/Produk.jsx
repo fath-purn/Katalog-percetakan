@@ -54,9 +54,9 @@ export default function Produk() {
                 alt={dbProduct.nama}
                 namaProduk={dbProduct.nama}
                 harga={dbProduct.harga}
-                deskripsi={dbProduct.deskripsi}
+                deskripsi={dbProduct.deskripsi.substring(0, 100)}
                 keterangan="Pesan Sekarang"
-                href={`produk/detail/${dbProduct.id}`}
+                href={`/produk/detail/${dbProduct.id}`}
               />
             ))}
           </div>
