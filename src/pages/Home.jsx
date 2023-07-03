@@ -42,9 +42,9 @@ function Home() {
       />
 
       {/* Header */}
-      <section id="Header">
-        <div className="flex  items-center mt-20 mb-20 bg-white max-md:flex-col md:max-lg:flex-col lg:flex-wrap">
-          <div className="flex-1 flex-col ml-20">
+      <section id="Header" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div className="flex items-center mt-20 mb-20 bg-white max-md:flex-col md:max-lg:flex-col lg:flex-wrap">
+          <div className="flex-1 flex-col max-md:ml-5 md:ml-20">
             <h1 className="leading-normal max-md:text-4xl md:max-lg:text-5xl lg:text-5xl w-10/12 mb-4 tracking-normal font-medium text-gray-900">
               Tempat Terbaik Mencetak Buku Yasin Terbaik, Murah dan Berkualitas
               !!
@@ -64,7 +64,7 @@ function Home() {
       </section>
 
       {/* Keunggulan */}
-      <section id="Keunggulan">
+      <section id="Keunggulan" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <div class="pt-5 pb-5 kelebihan">
           <h2>
             Mengapa Harus <br /> di JAVAINDO Yasin's <br /> Islamic Book Center?
@@ -112,7 +112,7 @@ function Home() {
       </section>
 
       {/* Produk */}
-      <section id="Produk">
+      <section id="Produk" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
         <div className="my-20">
           <h2 className="mb-10 text-4xl text-center text-cyan-700 font-semibold">
             Produk

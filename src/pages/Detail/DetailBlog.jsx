@@ -42,10 +42,10 @@ export default function DetailBlog() {
         {/* Blog */}
         <section className="mt-20">
           <div className="max-md:mx-5 md:max-lg:mx-[10%] lg:mx-[20%] lg:mt-5 mb-5">
-            <div className="max-md:w-[100%] md:max-lg:w-[100%] lg:w-[60%] flex justify-center m-auto">
+            <div className="max-md:w-[100%] md:max-lg:w-[100%] lg:w-[60%] flex justify-center m-auto" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
               <img src={image} alt={nama} width="100%" />
             </div>
-            <div>
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <h2 className="my-5 max-md:text-2xl md:text-3xl text-center text-cyan-700 font-semibold">{nama} </h2>
               <BreadCrumb keterangan={nama.substring(0, 30)} menu="Blog" />
               <p className="text-gray-500 mt-2">{deskripsi}</p>

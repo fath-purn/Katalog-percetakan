@@ -93,7 +93,7 @@ export default function DetailProduk() {
                 />
               </div>
             </div>
-            <div className="max-md:m-5 md:max-lg:my-5 max-md:mx-5 md:max-lg:mx-10 lg:mx-10 max-md:w-full lg:w-[40%] h-auto ">
+            <div className="max-md:m-5 md:max-lg:my-5 max-md:mx-5 md:max-lg:mx-10 lg:mx-10 max-md:w-full lg:w-[40%] h-auto " data-aos="fade-up" data-aos-anchor-placement="top-bottom">
               <BreadCrumb keterangan={nama.substring(0, 30)} menu="Produk" />
               <p className=" text-cyan-700 my-2">{kategori}</p>
               <h2 className="mb-5 text-4xl font-semibold">{nama}</h2>
