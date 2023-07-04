@@ -125,7 +125,7 @@ export default function DetailProduk() {
                 harga={dbProduct.harga}
                 deskripsi={dbProduct.deskripsi.substring(0, 100)}
                 keterangan="Pesan Sekarang"
-                href={`produk/detail/${dbProduct.id}`}
+                href={`/produk/detail/${dbProduct.id}`}
               />
             ))}
           </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {useNavigate, useParams  }  from "react-router-dom";
+import { useNavigate, useParams, Navigate }  from "react-router-dom";
 import axios from "axios";
 
 
@@ -54,6 +54,14 @@ const LayananEdit = () => {
       };
       
     
+    // auth
+    const [isLogged, setLogged] = useState(!!localStorage.getItem("token"));
+
+    if (!isLogged) {
+        return <Navigate to="/login" replace={true} />;
+    }
+
+    if(isLogged)
     return (
         <div className="flex flex-col px-[20%] my-5">
             <h2 className="text-4xl py-5 text-center">Edit Layanan</h2>

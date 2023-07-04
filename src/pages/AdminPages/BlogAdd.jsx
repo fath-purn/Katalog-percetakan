@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {useNavigate  }  from "react-router-dom";
+import {useNavigate, Navigate }  from "react-router-dom";
 import axios from "axios";
 
 
@@ -40,6 +40,15 @@ const BlogAdd = () => {
     
     const navigate = useNavigate();
 
+
+    // auth
+    const [isLogged, setLogged] = useState(!!localStorage.getItem("token"));
+
+    if (!isLogged) {
+        return <Navigate to="/login" replace={true} />;
+    }
+
+    if(isLogged)
     return (
         <div className="flex flex-col px-[20%] my-5">
             <h2 className="text-4xl py-5 text-center">Tambah Blog</h2>
