@@ -47,7 +47,7 @@ export default function DetailBlog() {
             </div>
             <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <h2 className="my-5 max-md:text-2xl md:text-3xl text-center text-cyan-700 font-semibold">{nama} </h2>
-              <BreadCrumb keterangan={nama.substring(0, 30)} menu="Blog" />
+              <BreadCrumb keterangan={nama.substring(0, 30)} href="/blog" menu="Blog" />
               <p className="text-gray-500 mt-2">{deskripsi}</p>
             </div>
           </div>
