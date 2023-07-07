@@ -7,7 +7,7 @@ const CardProduk = (props) => {
     initTE({ Ripple });
   }, []);
   return (
-    <div className="flex-1 max-md:min-w-[100%] md:max-lg:min-w-[40%] lg:min-w-[30%] lg:max-w-[30%] flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+    <div className="flex-1 max-md:min-w-[100%] md:max-lg:min-w-[40%] lg:min-w-[30%] lg:max-w-[30%] flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
       <a href={props.href}>
         <img
           className="rounded-t-lg h-auto min-w-[100%] "

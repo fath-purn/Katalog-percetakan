@@ -38,12 +38,8 @@ import DetailProduk from "./Detail/DetailProduk";
 import DetailLayanan from "./Detail/DetailLayanan";
 
 function App() {
-    useEffect(() => {
-        AOS.init({
-            once: false,
-        });
-    }, [])
-
+  AOS.init();
+  
     return (
         <Router>
             <Routes>
