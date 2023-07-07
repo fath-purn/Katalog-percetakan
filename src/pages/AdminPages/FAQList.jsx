@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 
 const FAQList = () => {
@@ -28,6 +28,15 @@ const FAQList = () => {
         }
     };
 
+
+    // auth
+    const [isLogged, setLogged] = useState(!!localStorage.getItem("token"));
+
+    if (!isLogged) {
+        return <Navigate to="/login" replace={true} />;
+    }
+
+    if(isLogged)
     return (
         <div>
             <div className="flex flex-col justify-center max-w-sm">
