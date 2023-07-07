@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import AOS from "aos";
 import 'aos/dist/aos.css';
@@ -38,8 +38,8 @@ import DetailProduk from "./Detail/DetailProduk";
 import DetailLayanan from "./Detail/DetailLayanan";
 
 function App() {
-    AOS.init();
-
+  AOS.init();
+  
     return (
         <Router>
             <Routes>
