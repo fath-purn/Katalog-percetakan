@@ -65,16 +65,16 @@ function Home() {
 
       {/* Keunggulan */}
       <section id="Keunggulan" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-        <div class="pt-5 pb-5 kelebihan">
+        <div className="pt-5 pb-5 kelebihan">
           <h2>
             Mengapa Harus <br /> di JAVAINDO Yasin's <br /> Islamic Book Center?
           </h2>
-          <div class="kelebihan-list pt-3">
-            <div class="row pb-5">
-              <div class="col-2 kelebihan-nomor kelebihan-nomor-2">
+          <div className="kelebihan-list pt-3">
+            <div className="row pb-5">
+              <div className="col-2 kelebihan-nomor kelebihan-nomor-2">
                 <h6>1.</h6>
               </div>
-              <div class="col-10 mt-3">
+              <div className="col-10 mt-3">
                 <h3>Proses Cetak Cepat</h3>
                 <p>
                   Proses cetak dapat ditunggu karena dilakukan dengan proses
@@ -83,11 +83,11 @@ function Home() {
                 </p>
               </div>
             </div>
-            <div class="row pb-5">
-              <div class="col-2 kelebihan-nomor kelebihan-nomor-2">
+            <div className="row pb-5">
+              <div className="col-2 kelebihan-nomor kelebihan-nomor-2">
                 <h6>2.</h6>
               </div>
-              <div class="col-10 mt-3">
+              <div className="col-10 mt-3">
                 <h3>Harga Yang Terjangkau</h3>
                 <p>
                   Harga yang ramah dikantong yang pastinya tidak akan membuat
@@ -95,11 +95,11 @@ function Home() {
                 </p>
               </div>
             </div>
-            <div class="row">
-              <div class="col-2 kelebihan-nomor kelebihan-nomor-2">
+            <div className="row">
+              <div className="col-2 kelebihan-nomor kelebihan-nomor-2">
                 <h6>3.</h6>
               </div>
-              <div class="col-10 mt-3">
+              <div className="col-10 mt-3">
                 <h3>Menggunakan Bahan Yang Berkualitas</h3>
                 <p>
                   Menggunakan bahan yang berkualitas yang pastinya hasil tidak

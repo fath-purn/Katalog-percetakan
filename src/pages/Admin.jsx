@@ -5,10 +5,17 @@ import { useState } from "react";
 
 export default function Admin() {
     const [isLogged, setLogged] = useState(!!localStorage.getItem("token"));
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleToggle = () => {
+        setIsOpen(!isOpen);
+    };
 
     if (!isLogged) {
         return <Navigate to="/login" replace={true} />;
     }
+
+    
 
     if(isLogged)
         return (
@@ -69,6 +76,8 @@ export default function Admin() {
                             className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                             aria-controls="dropdown-produk"
                             data-collapse-toggle="dropdown-produk"
+                            aria-expanded={isOpen}
+                            onClick={handleToggle}
                         >
                             <svg
                             aria-hidden="true"
