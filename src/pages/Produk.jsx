@@ -46,7 +46,7 @@ export default function Produk() {
           <h2 className="mb-10 text-4xl text-center text-cyan-700 font-semibold">
             Produk
           </h2>
-          <div className="flex flex-wrap justify-between max-md:mx-5 md:max-lg:mx-10 lg:mx-10 gap-7">
+          <div className="flex flex-wrap justify-between max-md:mx-5 md:max-lg:mx-10 lg:mx-10 gap-7 " >
             {produk.map((dbProduct) => (
               <CardProduk
                 key={dbProduct.id}
