@@ -55,7 +55,7 @@ function Home() {
             </p>
 
             {/* Button */}
-            <Btn href="#Keunggulan" keterangan="Pesan Sekarang" />
+            <Btn href="/produk" keterangan="Pesan Sekarang" />
           </div>
           <div className="flex-1 items-end justify-center max-md:mt-10 md:max-lg:mt-10">
             <img src={Head} alt="Logo" />

@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import AOS from "aos";
 import 'aos/dist/aos.css';
-import { useLocation, Navigate } from "react-router-dom";
 
 import Home from './Home';
 import Produk from './Produk';
@@ -41,50 +40,37 @@ import FAQEdit from "./AdminPages/FAQEdit";
 import DetailBlog from "./Detail/DetailBlog";
 import DetailProduk from "./Detail/DetailProduk";
 import DetailLayanan from "./Detail/DetailLayanan";
+// import SearchProduk from "./Detail/SearchProduk";
 
 
 function App() {
     AOS.init();
-  
-    // const [isLogged, setLogged] = useState(!!localStorage.getItem("token"));
-  
-    // if (!isLogged) {
-    //   return <Navigate to="/login" replace={true} />;
-    // }
-  
-    // function PrivateRoute({ children, isLogged }) {
-    //   return isLogged ? (
-    //     <>{children}</>
-    //   ) : (
-    //     <Navigate to="/login" replace={true} />
-    //   );
-    // }
-  
+
     return (
         <Router>
             <Routes>
-            <Route path="/*" element={<Home />} />
-    
-            {/* Produk */}
-            <Route path="/produk" element={<Produk />} />
-            <Route path="/produk/detail/:id" element={<DetailProduk />} />
-    
-            {/* Layanan */}
-            <Route path="/layanan" element={<Layanan />} />
-            <Route path="/layanan/detail/:id" element={<DetailLayanan />} />
-    
-            {/* FAQ */}
-            <Route path="/faq" element={<FAQ />} />
-    
-            {/* Blog */}
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/detail/:id" element={<DetailBlog />} />
-    
-            {/* Login */}
-            <Route path="/login" element={<LoginForm />} />
-    
-            {/* Admin */}
-            {/* <Route element={<PrivateRoute isLogged={isLogged} />}> */}
+                <Route path="/*" element={<Home />} />
+        
+                {/* Produk */}
+                <Route path="/produk" element={<Produk />} />
+                <Route path="/produk/detail/:id" element={<DetailProduk />} />
+                {/* <Route path="/search/:name" element={<SearchProduk />} /> */}
+        
+                {/* Layanan */}
+                <Route path="/layanan" element={<Layanan />} />
+                <Route path="/layanan/detail/:id" element={<DetailLayanan />} />
+        
+                {/* FAQ */}
+                <Route path="/faq" element={<FAQ />} />
+        
+                {/* Blog */}
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/detail/:id" element={<DetailBlog />} />
+        
+                {/* Login */}
+                <Route path="/login" element={<LoginForm />} />
+        
+                {/* Admin */}
                 <Route path="/admin" element={<Admin />} />
     
                 {/* Produk */}
@@ -106,7 +92,7 @@ function App() {
                 <Route path="/admin/faq" element={<FAQList />} />
                 <Route path="/admin/faq/addfaq" element={<FAQAdd />} />
                 <Route path="/admin/faq/editfaq/:id" element={<FAQEdit />} />
-            {/* </Route> */}
+            
             </Routes>
         </Router>
     );

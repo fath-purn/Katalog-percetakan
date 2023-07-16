@@ -1,40 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Collapse, Dropdown, initTE, Ripple } from "tw-elements";
+import axios from "axios";
 import "flowbite";
+import { Link, Navigate } from "react-router-dom";
 
 import Logo from "../img/logo.png";
 
 const Navbar = (props) => {
-  const [searchValue, setSearchValue] = useState('');
-
-  useEffect(() => {
-    initTE({ Collapse, Dropdown, Ripple });
-  }, []);
-  
-  const handleSearchChange = (e) => {
-    // const value = e.target.value;
-    // setSearchValue(value);
-
-    // Perform search logic here, e.g. make an API call or filter data from a database
-    // const results = performSearch(value);
-    // setSearchResults(results);
-  };
-
-  const performSearch = (value) => {
-    // Implement your search logic here, e.g. filter data based on the search value
-    // Return the filtered results
-    // This is just a dummy implementation, replace it with your actual search logic
-    // return data.filter((item) => item.toLowerCase().includes(value.toLowerCase()));
-  };
-
-
+  const [query, setQuery] = useState("");
 
   // css
-  const unPages =
+  const unPages = 
     "block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyan-700 md:p-0 md:dark:hover:text-cyan-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700";
-  const pages =
+  const halaman =
     "block py-2 pl-3 pr-4 text-white bg-cyan-700 rounded md:bg-transparent md:text-cyan-700 md:p-0 md:dark:text-cyan-500";
 
+  // memunculkan menu dan menutup di mode hp
   function toggleNavbarSearch() {
     const button = document.querySelector('button[data-collapse-toggle="navbar-search"]');
     const navbarSearch = document.getElementById('navbar-search');
@@ -49,7 +29,8 @@ const Navbar = (props) => {
   return (
     <nav className="fixed z-50 top-0 w-full bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="https://flowbite.com/" className="flex items-center">
+        {/* logo */}
+        <a href="/" className="flex items-center">
           <img
             src={Logo}
             className="h-8 mr-3"
@@ -60,6 +41,7 @@ const Navbar = (props) => {
           </span>
         </a>
         <div className="flex md:order-2">
+          {/* Search menu */}
           <div className="relative hidden md:block">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
@@ -79,13 +61,23 @@ const Navbar = (props) => {
               </svg>
               <span className="sr-only">Search icon</span>
             </div>
-            <input
-              type="text"
-              id="search-navbar"
-              className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Search..."
-            />
+            {/* inputan */}
+            {/* <form onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                searchData();
+              }
+            }}> */}
+              <input
+                type="text"
+                id="search-navbar"
+                className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Search..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                />
+            {/* </form> */}
           </div>
+          {/* hamburger menu */}
           <button
             type="button"
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -112,6 +104,7 @@ const Navbar = (props) => {
             </svg>
           </button>
         </div>
+        {/* Menu utama */}
         <div
           className="items-center justify-between hidden w-full sm:flex sm:w-auto sm:order-1"
           id="navbar-search"
@@ -119,6 +112,7 @@ const Navbar = (props) => {
           {/* Search box */}
           <div className="relative mt-3 md:hidden">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+              {/* icon search */}
               <svg
                 className="w-4 h-4 text-gray-500 dark:text-gray-400"
                 aria-hidden="true"
@@ -132,30 +126,41 @@ const Navbar = (props) => {
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                />
+                  />
               </svg>
             </div>
-            <input
-              type="text"
-              id="search-navbar"
-              className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Search..."
-              value={searchValue}
-              onChange={handleSearchChange}
-            />
-            {/* <ul>
-              {searchResults.map((result, index) => (
-                <li key={index}>{result}</li>
+            {/* inputan */}
+            {/* <form onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                searchData();
+              }
+            }}> */}
+              <input
+                type="text"
+                id="search-navbar"
+                className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Search..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                />
+            {/* </form>
+            <ul>
+              {produks && produks.map((produk) => (
+                <li key={produk.id}>
+                  <Link href={`/produk/${produk.id}`}>
+                    <a>{produk.nama}</a>
+                  </Link>
+                </li>
               ))}
-            </ul>  */}
+            </ul> */}
           </div>
 
           {/* Menu */}
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <a
-                href="/produk"
-                className={props.HomeStyle ? pages : unPages}
+                href="/"
+                className={props.HomeStyle ? halaman : unPages}
                 aria-current="page"
               >
                 Home
@@ -164,7 +169,7 @@ const Navbar = (props) => {
             <li>
               <a
                 href="/produk"
-                className={props.ProdukStyle ? pages : unPages}
+                className={props.ProdukStyle ? halaman : unPages}
                 >
                 Produk
               </a>
@@ -172,7 +177,7 @@ const Navbar = (props) => {
             <li>
               <a
                 href="/layanan"
-                className={props.LayananStyle ? pages : unPages}
+                className={props.LayananStyle ? halaman : unPages}
                 >
                 Layanan
               </a>
@@ -180,7 +185,7 @@ const Navbar = (props) => {
             <li>
               <a
                 href="/blog"
-                className={props.BlogStyle ? pages : unPages}
+                className={props.BlogStyle ? halaman : unPages}
                 >
                 Blog
               </a>
@@ -188,7 +193,7 @@ const Navbar = (props) => {
             <li>
               <a
                 href="/faq"
-                className={props.FAQStyle ? pages : unPages}>
+                className={props.FAQStyle ? halaman : unPages}>
                 FAQ
               </a>
             </li>
