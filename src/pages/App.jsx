@@ -11,6 +11,7 @@ import FAQ from './FAQ';
 import Blog from "./Blog";
 
 import LoginForm from "./AdminPages/Login";
+import Register from "./AdminPages/Register";
 
 // Admin
 import Admin from "./Admin";
@@ -43,6 +44,7 @@ import DetailLayanan from "./Detail/DetailLayanan";
 // import SearchProduk from "./Detail/SearchProduk";
 
 
+
 function App() {
     AOS.init();
 
@@ -69,6 +71,7 @@ function App() {
         
                 {/* Login */}
                 <Route path="/login" element={<LoginForm />} />
+                <Route path="/register" element={<Register />} />
         
                 {/* Admin */}
                 <Route path="/admin" element={<Admin />} />
@@ -93,6 +96,7 @@ function App() {
                 <Route path="/admin/faq/addfaq" element={<FAQAdd />} />
                 <Route path="/admin/faq/editfaq/:id" element={<FAQEdit />} />
             
+
             </Routes>
         </Router>
     );

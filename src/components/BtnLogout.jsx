@@ -6,7 +6,7 @@ export default function BtnLogout(props) {
   function handleClick() {
     localStorage.removeItem("token");
     window.location.reload();
-    Navigate("/admin/login");
+    Navigate("/admin/login"); 
   }
 
   return (

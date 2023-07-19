@@ -1,45 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics";
 
-import axios from "axios";
+// Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyCVio_sA3K8BUdTmcFXHWKyaB9OHPWxRiQ",
+    authDomain: "javaindo-percetakan.firebaseapp.com",
+    projectId: "javaindo-percetakan",
+    storageBucket: "javaindo-percetakan.appspot.com",
+    messagingSenderId: "503397054055",
+    appId: "1:503397054055:web:72326cc463b662c81006c2",
+    measurementId: "G-1L1212J8JC"
+};
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 const LoginForm = () => {
     const navigate = useNavigate();
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
-
-    const handleUsernameChange = (e) => {
-        setUsername(e.target.value);
+    const [error, setError] = useState(false);
+    const [isLogged, setLogged] = useState(!!localStorage.getItem("token"));
+    
+    useEffect(() => {
+        setLogged(!!localStorage.getItem("token"));
+    }, []);
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
     };
 
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
     };
-
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        axios.post("http://localhost:3000/login", { username, password })
-            .then((response) => {
-                // Handle successful login
-                localStorage.setItem("token", response.data.token);
-                console.log(localStorage.getItem("token"));
-                navigate(`/admin`);
+        const auth = getAuth();
+      
+        // Sign in the user with the provided email and password
+        signInWithEmailAndPassword(auth, email, password)
+            .then(async ({ user }) => {
+                // Get the ID token of the user
+                const idToken = await user.getIdToken();
+        
+                // Store the ID token in local storage with the key "token"
+                localStorage.setItem("token", idToken);
+                setLogged(true);
+                navigate("/admin");
             })
             .catch((error) => {
-                // Handle login error
-                console.error(error);
-            })
-            .finally(() => {
+                // Handle login error, if any
+                setError("Login Error:", error);
                 setIsSubmitting(false);
             });
     };
-
-    // mengecek apakah admin sudah login atau belum
-    const [isLogged, setLogged] = useState(!!localStorage.getItem("token"));
-    const [isOpen, setIsOpen] = useState(false);
-
     if (isLogged) {
         return <Navigate to="/admin" replace={true} />;
     }
@@ -52,16 +70,16 @@ const LoginForm = () => {
                     <form onSubmit={handleSubmit}>
                         <div className="mb-6">
                             <label
-                                htmlFor="username"
+                                htmlFor="email"
                                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                             >
-                                Username
+                                Email
                             </label>
                             <input
                                 type="text"
-                                id="username"
-                                value={username}
-                                onChange={handleUsernameChange}
+                                id="email"
+                                value={email}
+                                onChange={handleEmailChange}
                                 disabled={isSubmitting}
                                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="name@flowbite.com"
@@ -102,6 +120,7 @@ const LoginForm = () => {
                                 Remember me
                             </label>
                         </div>
+                        <p className="ml-2 text-sm text-red-600 my-5 font-medium ">{error && "*email atau password salah"}</p>
                         <button
                             type="submit"
                             disabled={isSubmitting}
