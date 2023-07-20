@@ -13,7 +13,7 @@ const ProdukList = () => {
     
     const getProduk = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/products");
+            const response = await axios.get("https://tough-teal-duck.cyclic.app/products");
             setProduk(response.data.data);
         } catch (error) {
             console.error(error);
@@ -22,7 +22,7 @@ const ProdukList = () => {
 
     const deleteProduk = async (id) => {
         try {
-          await axios.delete(`http://localhost:3000/products/${id}`);
+          await axios.delete(`https://tough-teal-duck.cyclic.app/products/${id}`);
           getProduk();
         } catch (error) {
           console.log(error);

@@ -13,7 +13,7 @@ const BlogList = () => {
     
     const getBlog = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/blog");
+            const response = await axios.get("https://tough-teal-duck.cyclic.app/blog");
             setBlog(response.data.data);
         } catch (error) {
             console.error(error);
@@ -22,7 +22,7 @@ const BlogList = () => {
 
     const deleteBlog = async (id) => {
         try {
-          await axios.delete(`http://localhost:3000/blog/${id}`);
+          await axios.delete(`https://tough-teal-duck.cyclic.app/blog/${id}`);
           getBlog();
         } catch (error) {
           console.log(error);

@@ -40,7 +40,7 @@ const BlogEdit = () => {
         formData.append("image", file);
         formData.append("url", preview);
         try {
-            await axios.patch(`http://localhost:3000/blog/${id}`, formData, {
+            await axios.patch(`https://tough-teal-duck.cyclic.app/blog/${id}`, formData, {
                 headers: {
                     "Content-type": "multipart/form-data",
                 },

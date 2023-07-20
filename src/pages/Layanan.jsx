@@ -26,7 +26,7 @@ export default function Layanan (props) {
     
     const getLayanan = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/layanan");
+            const response = await axios.get("https://tough-teal-duck.cyclic.app/layanan");
             setLayanan(response.data.data);
         } catch (error) {
             console.error(error);

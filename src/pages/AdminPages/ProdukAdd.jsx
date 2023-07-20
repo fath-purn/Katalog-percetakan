@@ -36,7 +36,7 @@ const ProdukAdd = () => {
         formData.append("ulasan", ulasan);
         formData.append("image", file);
         try {
-            await axios.post("http://localhost:3000/products", formData, {
+            await axios.post("https://tough-teal-duck.cyclic.app/products", formData, {
                 headers: {
                     "Content-type": "multipart/form-data",
                 },

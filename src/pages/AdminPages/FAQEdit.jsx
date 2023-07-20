@@ -18,7 +18,7 @@ const FAQEdit = () => {
     }, []);
 
     const getFAQById = async () => {
-        const response = await axios.get(`http://localhost:3000/faq/${id}`);
+        const response = await axios.get(`https://tough-teal-duck.cyclic.app/faq/${id}`);
         setNama(response.data.nama);
         setDeskripsi(response.data.deskripsi);
         setFile(response.data.image);
@@ -38,7 +38,7 @@ const FAQEdit = () => {
         formData.append("deskripsi", deskripsi);
         formData.append("file", file);
         try {
-          await axios.patch(`http://localhost:3000/faq/${id}`, formData, {
+          await axios.patch(`https://tough-teal-duck.cyclic.app/faq/${id}`, formData, {
             headers: {
                 "Content-type": "multipart/form-data",
               },

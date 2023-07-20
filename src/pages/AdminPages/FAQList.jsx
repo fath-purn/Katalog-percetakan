@@ -12,7 +12,7 @@ const FAQList = () => {
     
     const getFAQ = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/faq");
+            const response = await axios.get("https://tough-teal-duck.cyclic.app/faq");
             setFAQ(response.data);
         } catch (error) {
             console.error(error);
@@ -21,7 +21,7 @@ const FAQList = () => {
 
     const deleteFAQ = async (id) => {
         try {
-          await axios.delete(`http://localhost:3000/faq/${id}`);
+          await axios.delete(`https://tough-teal-duck.cyclic.app/faq/${id}`);
           getFAQ();
         } catch (error) {
           console.log(error);

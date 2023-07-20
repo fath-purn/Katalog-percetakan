@@ -28,7 +28,7 @@ const ProdukEdit = () => {
     }, []);
 
     const getProdukById = async () => {
-        const response = await axios.get(`http://localhost:3000/products/${id}`);
+        const response = await axios.get(`https://tough-teal-duck.cyclic.app/products/${id}`);
         setNama(response.data.data.nama);
         setDeskripsi(response.data.data.deskripsi);
         setHarga(response.data.data.harga);
@@ -55,7 +55,7 @@ const ProdukEdit = () => {
         formData.append("url", preview);
         formData.append("image", file)
         try {
-            await axios.patch(`http://localhost:3000/products/${id}`, formData, {
+            await axios.patch(`https://tough-teal-duck.cyclic.app/products/${id}`, formData, {
                 headers: {
                     "Content-type": "multipart/form-data",
                 },

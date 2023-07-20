@@ -26,7 +26,7 @@ const FAQAdd = () => {
         formData.append("deskripsi", deskripsi);
         formData.append("file", file);
         try {
-          await axios.post("http://localhost:3000/faq", formData, {
+          await axios.post("https://tough-teal-duck.cyclic.app/faq", formData, {
             headers: {
                 "Content-type": "multipart/form-data",
             },

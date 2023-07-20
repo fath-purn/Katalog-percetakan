@@ -29,7 +29,7 @@ const LayananAdd = () => {
         formData.append("deskripsi", deskripsi);
         formData.append("image", file);
         try {
-            await axios.post("http://localhost:3000/layanan", formData, {
+            await axios.post("https://tough-teal-duck.cyclic.app/layanan", formData, {
                 headers: {
                     "Content-type": "multipart/form-data",
                 },

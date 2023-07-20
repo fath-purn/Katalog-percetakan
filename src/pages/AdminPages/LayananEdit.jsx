@@ -23,7 +23,7 @@ const LayananEdit = () => {
 
     const getLayananById = async () => {
         try {
-            const response = await axios.get(`http://localhost:3000/layanan/${id}`);
+            const response = await axios.get(`https://tough-teal-duck.cyclic.app/layanan/${id}`);
             const { nama, deskripsi, url } = response.data.data;
             setNama(nama);
             setDeskripsi(deskripsi);
@@ -47,7 +47,7 @@ const LayananEdit = () => {
         formData.append("url", preview);
         formData.append("image", file)
         try {
-            await axios.patch(`http://localhost:3000/layanan/${id}`, formData, {
+            await axios.patch(`https://tough-teal-duck.cyclic.app/layanan/${id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
