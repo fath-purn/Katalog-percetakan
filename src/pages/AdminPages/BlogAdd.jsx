@@ -23,9 +23,9 @@ const BlogAdd = () => {
     const saveBlog = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("nama", nama);
+        formData.append("name", nama);
         formData.append("deskripsi", deskripsi);
-        formData.append("file", file);
+        formData.append("image", file);
         try {
           await axios.post("http://localhost:3000/blog", formData, {
             headers: {

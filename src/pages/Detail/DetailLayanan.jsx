@@ -29,9 +29,9 @@ export default function DetailLayanan() {
 
   const getLayananById = async () => {
       const response = await axios.get(`http://localhost:3000/layanan/${id}`);
-      setNama(response.data.nama);
-      setDeskripsi(response.data.deskripsi);
-      setImage(response.data.url);
+      setNama(response.data.data.nama);
+      setDeskripsi(response.data.data.deskripsi);
+      setImage(response.data.data.url);
   }
 
     return (

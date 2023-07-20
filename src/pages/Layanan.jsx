@@ -27,8 +27,7 @@ export default function Layanan (props) {
     const getLayanan = async () => {
         try {
             const response = await axios.get("http://localhost:3000/layanan");
-            setLayanan(response.data);
-            console.log(response.data);
+            setLayanan(response.data.data);
         } catch (error) {
             console.error(error);
         }

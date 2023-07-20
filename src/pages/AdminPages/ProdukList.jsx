@@ -14,7 +14,7 @@ const ProdukList = () => {
     const getProduk = async () => {
         try {
             const response = await axios.get("http://localhost:3000/products");
-            setProduk(response.data);
+            setProduk(response.data.data);
         } catch (error) {
             console.error(error);
         }
@@ -66,7 +66,7 @@ const ProdukList = () => {
                                     </td>
                                     <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.deskripsi.substring(0, 100) }</td>
                                     <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.harga }</td>
-                                    <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.kategori }</td>
+                                    <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.category }</td>
                                     <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.ulasan }</td>
                                     <th className="whitespace-nowrap px-6 py-4 font-medium">
                                         <div className="flex">

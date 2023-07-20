@@ -29,9 +29,9 @@ export default function DetailBlog() {
 
   const getBlogById = async () => {
       const response = await axios.get(`http://localhost:3000/blog/${id}`);
-      setNama(response.data.nama);
-      setDeskripsi(response.data.deskripsi);
-      setImage(response.data.url);
+      setNama(response.data.data.nama);
+      setDeskripsi(response.data.data.deskripsi);
+      setImage(response.data.data.url);
   }
 
     return (

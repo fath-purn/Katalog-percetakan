@@ -9,12 +9,12 @@ const BlogList = () => {
     
     useEffect(() => {
         getBlog();
-    }, []);
+    }, []); 
     
     const getBlog = async () => {
         try {
             const response = await axios.get("http://localhost:3000/blog");
-            setBlog(response.data);
+            setBlog(response.data.data);
         } catch (error) {
             console.error(error);
         }

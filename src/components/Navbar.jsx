@@ -37,7 +37,7 @@ const Navbar = (props) => {
             alt="Flowbite Logo"
           />
           <span className="self-center md:max-lg:hidden lg:inline text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Flowbite
+            Javaindo
           </span>
         </a>
         <div className="flex md:order-2">

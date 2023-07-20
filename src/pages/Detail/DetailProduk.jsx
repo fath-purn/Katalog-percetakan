@@ -41,12 +41,12 @@ export default function DetailProduk() {
   const getProdukById = useCallback(async () => {
     try {
       const response = await axios.get(`http://localhost:3000/products/${id}`);
-      setNama(response.data.nama);
-      setDeskripsi(response.data.deskripsi);
-      setHarga(response.data.harga);
-      setKategori(response.data.kategori);
-      setUlasan(response.data.ulasan);
-      setGambar(response.data.url);
+      setNama(response.data.data.nama);
+      setDeskripsi(response.data.data.deskripsi);
+      setHarga(response.data.data.harga);
+      setKategori(response.data.data.kategori);
+      setUlasan(response.data.data.ulasan);
+      setGambar(response.data.data.url);
       setId(id);
     } catch (error) {
       console.error(error);
@@ -67,7 +67,7 @@ export default function DetailProduk() {
   const getProduk = async () => {
     try {
       const response = await axios.get("http://localhost:3000/products");
-      setProduk(response.data);
+      setProduk(response.data.data);
     } catch (error) {
       console.error(error);
     }
