@@ -24,15 +24,19 @@ export default function DetailBlog() {
   const [image, setImage] = useState("");
 
   useEffect(() => {
-      getBlogById();
-  }, []);
+    const getLayananById = async () => {
+      try {
+        const response = await axios.get(`https://tough-teal-duck.cyclic.app/blog/${id}`);
+        setNama(response.data.data.nama);
+        setDeskripsi(response.data.data.deskripsi);
+        setImage(response.data.data.url);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-  const getBlogById = async () => {
-      const response = await axios.get(`http://localhost:3000/blog/${id}`);
-      setNama(response.data.nama);
-      setDeskripsi(response.data.deskripsi);
-      setImage(response.data.url);
-  }
+    getLayananById();
+  }, [id]);
 
     return (
       <div className="container-fluid relative md:max-lg:top-2 lg:top-7 ">

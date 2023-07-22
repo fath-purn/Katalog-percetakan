@@ -10,6 +10,7 @@ export default function AdminInput(props) {
             </label>
             <input
                 type="text"
+                required
                 className="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem]"
                 value={props.value}
                 onChange={props.onChange}

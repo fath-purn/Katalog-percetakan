@@ -29,21 +29,21 @@ const ProdukAdd = () => {
     const saveProduk = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("nama", nama);
+        formData.append("name", nama);
         formData.append("deskripsi", deskripsi);
         formData.append("harga", harga);
-        formData.append("kategori", kategori);
+        formData.append("category", kategori);
         formData.append("ulasan", ulasan);
-        formData.append("file", file);
+        formData.append("image", file);
         try {
-          await axios.post("http://localhost:3000/products", formData, {
-            headers: {
-                "Content-type": "multipart/form-data",
-            },
-          });
-          navigate("/admin/produk");
+            await axios.post("https://tough-teal-duck.cyclic.app/products", formData, {
+                headers: {
+                    "Content-type": "multipart/form-data",
+                },
+            });
+            navigate("/admin/produk");
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
       };
     
