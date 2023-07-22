@@ -24,20 +24,15 @@ export default function DetailLayanan() {
   const [image, setImage] = useState("");
 
   useEffect(() => {
-    const getLayananById = async () => {
-      try {
-        const response = await axios.get(`https://tough-teal-duck.cyclic.app/layanan/${id}`);
-        setNama(response.data.data.nama);
-        setDeskripsi(response.data.data.deskripsi);
-        setImage(response.data.data.url);
-      } catch (error) {
-        console.log(error);
-      }
-    };
+      getLayananById();
+  }, []);
 
-    getLayananById();
-  }, [id]);
-
+  const getLayananById = async () => {
+      const response = await axios.get(`http://localhost:3000/layanan/${id}`);
+      setNama(response.data.nama);
+      setDeskripsi(response.data.deskripsi);
+      setImage(response.data.url);
+  }
 
     return (
       <div className="container-fluid relative md:max-lg:top-2 lg:top-7 ">

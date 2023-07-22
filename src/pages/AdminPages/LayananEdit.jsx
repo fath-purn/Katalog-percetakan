@@ -22,15 +22,11 @@ const LayananEdit = () => {
     }, []);
 
     const getLayananById = async () => {
-        try {
-            const response = await axios.get(`https://tough-teal-duck.cyclic.app/layanan/${id}`);
-            const { nama, deskripsi, url } = response.data.data;
-            setNama(nama);
-            setDeskripsi(deskripsi);
-            setPreview(url);
-        } catch (error) {
-            console.log(error);
-        }
+        const response = await axios.get(`http://localhost:3000/layanan/${id}`);
+        setNama(response.data.nama);
+        setDeskripsi(response.data.deskripsi);
+        setFile(response.data.image);
+        setPreview(response.data.url);
     }
 
     const loadImage = (e) => {
@@ -42,21 +38,20 @@ const LayananEdit = () => {
     const updateLayanan = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("name", nama);
+        formData.append("nama", nama);
         formData.append("deskripsi", deskripsi);
-        formData.append("url", preview);
-        formData.append("image", file)
+        formData.append("file", file);
         try {
-            await axios.patch(`https://tough-teal-duck.cyclic.app/layanan/${id}`, formData, {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            });
-            navigate("/admin/layanan");
+          await axios.patch(`http://localhost:3000/layanan/${id}`, formData, {
+            headers: {
+                "Content-type": "multipart/form-data",
+              },
+          });
+          navigate("/admin/layanan");
         } catch (error) {
-            console.log(error);
+          console.log(error);
         }
-    };
+      };
       
     
     // auth
@@ -86,7 +81,7 @@ const LayananEdit = () => {
                         <img src={preview} alt="Preview Image" />
                     </figure>
                 ) : (
-                    ""  
+                    ""
                 )}
                 <AdminTextArea 
                     value = {deskripsi}
