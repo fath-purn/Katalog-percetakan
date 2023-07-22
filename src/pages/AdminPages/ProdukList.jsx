@@ -61,7 +61,7 @@ const ProdukList = () => {
                                     <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.nama.substring(0, 20) }</td>
                                     <td>
                                         <figure className="w-40 h-auto ease-in-out duration-300 hover:w-96 hover:z-10 hover:absolute">
-                                            <img src={produk.url} alt="Image" />
+                                            <img src={produk.url} alt={produk.nama} />
                                         </figure>
                                     </td>
                                     <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.deskripsi.substring(0, 100) }</td>

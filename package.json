@@ -1,6 +1,7 @@
 {
   "name": "percetakan",
   "version": "0.1.0",
+  "homepage": "https://javaindopercetakanmurah.my.id/",
   "private": true,
   "dependencies": {
     "@heroicons/react": "^2.0.18",
@@ -10,21 +11,21 @@
     "cors": "^2.8.5",
     "dayjs": "^1.11.9",
     "firebase": "^10.0.0",
-    "flowbite": "^1.6.6",
+    "flowbite": "^1.7.0",
     "google-map-react": "^2.2.1",
     "itil": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.0",
     "react-scripts": "^5.0.1",
+    "source-map-loader": "^4.0.1",
     "tw-elements": "^1.0.0-beta2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "nodemon server.js"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +51,6 @@
   "description": "build controllers models server routes",
   "main": "server.js",
   "keywords": [],
-  "author": "",
+  "author": "Fatkhurrohman Purnomo",
   "license": "ISC"
 }

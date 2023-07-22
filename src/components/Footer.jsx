@@ -3,18 +3,9 @@ import GoogleMapReact from 'google-map-react';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627
-    },
-    zoom: 11
-  };
-
   const year = new Date().getFullYear();
 
 
-const geoUrl = "https://goo.gl/maps/jhdhvd447GyksXid9";
 
 export default function Footer(props) {
   return (

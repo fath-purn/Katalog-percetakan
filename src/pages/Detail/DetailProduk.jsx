@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 import "../Home.css";
@@ -32,22 +32,20 @@ export default function DetailProduk() {
   const [deskripsi, setDeskripsi] = useState("");
   const [harga, setHarga] = useState();
   const [kategori, setKategori] = useState("");
-  const [ulasan, setUlasan] = useState("");
+  // const [ulasan, setUlasan] = useState("");
   const [gambar, setGambar] = useState("");
-  const [idProduk, setId] = useState();
 
   // router
   const { id } = useParams();
   const getProdukById = useCallback(async () => {
     try {
-      const response = await axios.get(`http://localhost:3000/products/${id}`);
+      const response = await axios.get(`https://tough-teal-duck.cyclic.app/products/${id}`);
       setNama(response.data.data.nama);
       setDeskripsi(response.data.data.deskripsi);
       setHarga(response.data.data.harga);
       setKategori(response.data.data.kategori);
-      setUlasan(response.data.data.ulasan);
+      // setUlasan(response.data.data.ulasan);
       setGambar(response.data.data.url);
-      setId(id);
     } catch (error) {
       console.error(error);
     }
@@ -66,7 +64,7 @@ export default function DetailProduk() {
 
   const getProduk = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/products");
+      const response = await axios.get("https://tough-teal-duck.cyclic.app/products");
       setProduk(response.data.data);
     } catch (error) {
       console.error(error);
@@ -90,7 +88,7 @@ export default function DetailProduk() {
                   href="/produk"
                   className="bg-black"
                   text={nama}
-                  link={`http://localhost:3000/products/${id}`}
+                  link={`https://tough-teal-duck.cyclic.app/products/${id}`}
                 />
               </div>
             </div>
