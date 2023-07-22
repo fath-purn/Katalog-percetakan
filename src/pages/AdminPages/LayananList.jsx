@@ -13,8 +13,8 @@ const LayananList = () => {
     
     const getLayanan = async () => {
         try {
-            const response = await axios.get("https://tough-teal-duck.cyclic.app/layanan");
-            setLayanan(response.data.data);
+            const response = await axios.get("http://localhost:3000/layanan");
+            setLayanan(response.data);
         } catch (error) {
             console.error(error);
         }
@@ -22,7 +22,7 @@ const LayananList = () => {
 
     const deleteLayanan = async (id) => {
         try {
-          await axios.delete(`https://tough-teal-duck.cyclic.app/layanan/${id}`);
+          await axios.delete(`http://localhost:3000/layanan/${id}`);
           getLayanan();
         } catch (error) {
           console.log(error);

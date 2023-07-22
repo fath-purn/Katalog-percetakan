@@ -2,15 +2,9 @@ import "flowbite";
 
 import { Navigate } from "react-router-dom";
 import { useState } from "react";
-import BtnLogout from "../components/BtnLogout";
 
 export default function Admin() {
     const [isLogged, setLogged] = useState(!!localStorage.getItem("token"));
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleToggle = () => {
-        setIsOpen(!isOpen);
-    };
 
     if (!isLogged) {
         return <Navigate to="/login" replace={true} />;
@@ -75,8 +69,6 @@ export default function Admin() {
                             className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                             aria-controls="dropdown-produk"
                             data-collapse-toggle="dropdown-produk"
-                            aria-expanded={isOpen}
-                            onClick={handleToggle}
                         >
                             <svg
                             aria-hidden="true"
@@ -260,68 +252,67 @@ export default function Admin() {
 
                         {/* FAQ */}
                         <li>
-                            <button
-                                type="button"
-                                className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                aria-controls="dropdown-faq"
-                                data-collapse-toggle="dropdown-faq"
+                        <button
+                            type="button"
+                            className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                            aria-controls="dropdown-faq"
+                            data-collapse-toggle="dropdown-faq"
+                        >
+                            <svg
+                            aria-hidden="true"
+                            className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
                             >
-                                <svg
-                                aria-hidden="true"
-                                className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg"
-                                >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                                    clipRule="evenodd"
-                                ></path>
-                                </svg>
+                        <path
+                            fillRule="evenodd"
+                            d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                            clipRule="evenodd"
+                        ></path>
+                        </svg>
 
-                                <span
-                                className="flex-1 ml-3 text-left whitespace-nowrap"
-                                sidebar-toggle-item
-                                >
-                                FAQ
-                                </span>
+                            <span
+                            className="flex-1 ml-3 text-left whitespace-nowrap"
+                            sidebar-toggle-item
+                            >
+                            FAQ
+                            </span>
 
-                                {/* Right button */}
-                                <svg
-                                sidebar-toggle-item
-                                className="w-6 h-6"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg"
-                                >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"
-                                ></path>
-                                </svg>
-                            </button>
-                            <ul id="dropdown-faq" className="hidden py-2 space-y-2">
-                                <li>
-                                <a
-                                    href="/admin/faq"
-                                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >
-                                    Tampil FAQ
-                                </a>
-                                </li>
-                                <li>
-                                <a
-                                    href="/admin/faq/addfaq"
-                                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                                >
-                                    Tambah FAQ
-                                </a>
-                                </li>
-                            </ul>
+                            {/* Right button */}
+                            <svg
+                            sidebar-toggle-item
+                            className="w-6 h-6"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                            >
+                            <path
+                                fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"
+                            ></path>
+                            </svg>
+                        </button>
+                        <ul id="dropdown-faq" className="hidden py-2 space-y-2">
+                            <li>
+                            <a
+                                href="/admin/faq"
+                                className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                            >
+                                Tampil FAQ
+                            </a>
+                            </li>
+                            <li>
+                            <a
+                                href="/admin/faq/addfaq"
+                                className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+                            >
+                                Tambah FAQ
+                            </a>
+                            </li>
+                        </ul>
                         </li>
-                        <BtnLogout />
                     </ul>
                     </div>
                 </aside>

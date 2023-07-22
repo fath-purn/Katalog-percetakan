@@ -13,8 +13,8 @@ const ProdukList = () => {
     
     const getProduk = async () => {
         try {
-            const response = await axios.get("https://tough-teal-duck.cyclic.app/products");
-            setProduk(response.data.data);
+            const response = await axios.get("http://localhost:3000/products");
+            setProduk(response.data);
         } catch (error) {
             console.error(error);
         }
@@ -22,7 +22,7 @@ const ProdukList = () => {
 
     const deleteProduk = async (id) => {
         try {
-          await axios.delete(`https://tough-teal-duck.cyclic.app/products/${id}`);
+          await axios.delete(`http://localhost:3000/products/${id}`);
           getProduk();
         } catch (error) {
           console.log(error);
@@ -58,15 +58,15 @@ const ProdukList = () => {
                             return (
                                 <tr key={produk.id} className="">
                                     <td className="whitespace-nowrap px-6 py-4 font-medium">{ index + 1 }</td>
-                                    <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.nama.substring(0, 20) }</td>
+                                    <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.nama }</td>
                                     <td>
                                         <figure className="w-40 h-auto ease-in-out duration-300 hover:w-96 hover:z-10 hover:absolute">
-                                            <img src={produk.url} alt={produk.nama} />
+                                            <img src={produk.url} alt="Image" />
                                         </figure>
                                     </td>
                                     <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.deskripsi.substring(0, 100) }</td>
                                     <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.harga }</td>
-                                    <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.category }</td>
+                                    <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.kategori }</td>
                                     <td className="whitespace-nowrap px-6 py-4 font-medium">{ produk.ulasan }</td>
                                     <th className="whitespace-nowrap px-6 py-4 font-medium">
                                         <div className="flex">

@@ -32,7 +32,7 @@ export default function FAQ (props) {
             </div>
 
             {/* Footer */}
-            <Footer center={defaultProps.center} zoom={defaultProps.zoom} />
+            <Footer />
         </div>
     )
  }

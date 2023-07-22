@@ -28,14 +28,14 @@ const ProdukEdit = () => {
     }, []);
 
     const getProdukById = async () => {
-        const response = await axios.get(`https://tough-teal-duck.cyclic.app/products/${id}`);
-        setNama(response.data.data.nama);
-        setDeskripsi(response.data.data.deskripsi);
-        setHarga(response.data.data.harga);
-        setKategori(response.data.data.category);
-        setUlasan(response.data.data.ulasan);
-        setFile(response.data.data.image);
-        setPreview(response.data.data.url);
+        const response = await axios.get(`http://localhost:3000/products/${id}`);
+        setNama(response.data.nama);
+        setDeskripsi(response.data.deskripsi);
+        setHarga(response.data.harga);
+        setKategori(response.data.kategori);
+        setUlasan(response.data.ulasan);
+        setFile(response.data.image);
+        setPreview(response.data.url);
     }
 
     const loadImage = (e) => {
@@ -47,22 +47,21 @@ const ProdukEdit = () => {
     const updateProduk = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("name", nama);
+        formData.append("nama", nama);
         formData.append("deskripsi", deskripsi);
         formData.append("harga", harga);
-        formData.append("category", kategori);
+        formData.append("kategori", kategori);
         formData.append("ulasan", ulasan);
-        formData.append("url", preview);
-        formData.append("image", file)
+        formData.append("file", file);
         try {
-            await axios.patch(`https://tough-teal-duck.cyclic.app/products/${id}`, formData, {
-                headers: {
-                    "Content-type": "multipart/form-data",
-                },
-            });
-            navigate("/admin/produk");
+          await axios.patch(`http://localhost:3000/products/${id}`, formData, {
+            headers: {
+                "Content-type": "multipart/form-data",
+              },
+          });
+          navigate("/admin/produk");
         } catch (error) {
-            console.log(error);
+          console.log(error);
         }
     };
       

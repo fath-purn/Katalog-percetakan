@@ -25,12 +25,12 @@ export default function Produk() {
     }, []);
     
     const getProduk = async () => {
-      try {
-          const response = await axios.get("https://tough-teal-duck.cyclic.app/products");
-          setProduk(response.data.data);
-      } catch (error) {
-          console.error(error);
-      }
+        try {
+            const response = await axios.get("http://localhost:3000/products");
+            setProduk(response.data);
+        } catch (error) {
+            console.error(error);
+        }
     };
 
   return (

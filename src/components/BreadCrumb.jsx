@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom"
 
 export default function BreadCrumb(props) {
-
-
     return (
         <nav className="flex" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-3">
