@@ -23,11 +23,11 @@ const BlogAdd = () => {
     const saveBlog = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("name", nama);
+        formData.append("nama", nama);
         formData.append("deskripsi", deskripsi);
-        formData.append("image", file);
+        formData.append("file", file);
         try {
-          await axios.post("https://tough-teal-duck.cyclic.app/blog", formData, {
+          await axios.post("http://localhost:3000/blog", formData, {
             headers: {
                 "Content-type": "multipart/form-data",
             },

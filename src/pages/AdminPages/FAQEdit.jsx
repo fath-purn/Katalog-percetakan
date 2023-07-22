@@ -5,21 +5,20 @@ import axios from "axios";
 
 import AdminInput from "../../components/AdminInput";
 import AdminTextArea from "../../components/AdminTextArea";
-import AdminInputImage from "../../components/AdminInputImage";
 import MyButton from "../../components/MyButton";
 
-const BlogEdit = () => {
+const FAQEdit = () => {
     const [nama, setNama] = useState("");
     const [deskripsi, setDeskripsi] = useState("");
     const [file, setFile] = useState("");
     const [preview, setPreview] = useState("");
 
     useEffect(() => {
-        getBlogById();
+        getFAQById();
     }, []);
 
-    const getBlogById = async () => {
-        const response = await axios.get(`http://localhost:3000/blog/${id}`);
+    const getFAQById = async () => {
+        const response = await axios.get(`http://localhost:3000/faq/${id}`);
         setNama(response.data.nama);
         setDeskripsi(response.data.deskripsi);
         setFile(response.data.image);
@@ -32,19 +31,19 @@ const BlogEdit = () => {
         setPreview(URL.createObjectURL(image));
     };
 
-    const updateBlog = async (e) => {
+    const updateFAQ = async (e) => {
         e.preventDefault();
         const formData = new FormData();
         formData.append("nama", nama);
         formData.append("deskripsi", deskripsi);
         formData.append("file", file);
         try {
-          await axios.patch(`http://localhost:3000/blog/${id}`, formData, {
+          await axios.patch(`http://localhost:3000/faq/${id}`, formData, {
             headers: {
                 "Content-type": "multipart/form-data",
               },
           });
-          navigate("/admin/blog");
+          navigate("/admin/faq");
         } catch (error) {
           console.log(error);
         }
@@ -64,25 +63,14 @@ const BlogEdit = () => {
     if(isLogged)
     return (
         <div className="flex flex-col px-[20%] my-5">
-            <h2 className="text-4xl py-5 text-center">Edit Blog</h2>
-            <form onSubmit={updateBlog}>
+            <h2 className="text-4xl py-5 text-center">Edit FAQ</h2>
+            <form onSubmit={updateFAQ}>
                 <AdminInput 
                     value = {nama}
                     onChange = {(e) => setNama(e.target.value)}
                     placeholder = "Nama"
                     label = "Nama"
                 />
-                <AdminInputImage 
-                    onChange = {loadImage}
-                    placeholder = "Media"
-                />
-                {preview ? (
-                    <figure className="w-52 h-auto my-5">
-                        <img src={preview} alt="Preview Image" />
-                    </figure>
-                ) : (
-                    ""
-                )}
                 <AdminTextArea 
                     value = {deskripsi}
                     onChange = {(e) => setDeskripsi(e.target.value)}
@@ -97,4 +85,4 @@ const BlogEdit = () => {
     )
 }
 
-export default BlogEdit;
+export default FAQEdit;
