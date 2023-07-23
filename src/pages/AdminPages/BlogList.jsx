@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 import AdminHeader from "../../components/AdminHeader";
 
@@ -9,12 +9,12 @@ const BlogList = () => {
     
     useEffect(() => {
         getBlog();
-    }, []);
+    }, []); 
     
     const getBlog = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/blog");
-            setBlog(response.data);
+            const response = await axios.get("https://tough-teal-duck.cyclic.app/blog");
+            setBlog(response.data.data);
         } catch (error) {
             console.error(error);
         }
@@ -22,13 +22,22 @@ const BlogList = () => {
 
     const deleteBlog = async (id) => {
         try {
-          await axios.delete(`http://localhost:3000/blog/${id}`);
+          await axios.delete(`https://tough-teal-duck.cyclic.app/blog/${id}`);
           getBlog();
         } catch (error) {
           console.log(error);
         }
     };
 
+
+    // auth
+    const [isLogged, setLogged] = useState(!!localStorage.getItem("token"));
+
+    if (!isLogged) {
+        return <Navigate to="/login" replace={true} />;
+    }
+
+    if(isLogged)
     return (
         <div>
             <div className="flex flex-col justify-center">

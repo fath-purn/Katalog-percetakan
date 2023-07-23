@@ -25,8 +25,8 @@ export default function Blog (props) {
     
     const getBlog = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/blog");
-            setBlog(response.data);
+            const response = await axios.get("https://tough-teal-duck.cyclic.app/blog");
+            setBlog(response.data.data);
         } catch (error) {
             console.error(error);
         }

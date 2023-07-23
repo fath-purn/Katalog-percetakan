@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {useNavigate, useParams  }  from "react-router-dom";
+import {useNavigate, useParams, Navigate }  from "react-router-dom";
 import axios from "axios";
 
 
@@ -20,10 +20,10 @@ const BlogEdit = () => {
 
     const getBlogById = async () => {
         const response = await axios.get(`http://localhost:3000/blog/${id}`);
-        setNama(response.data.nama);
-        setDeskripsi(response.data.deskripsi);
-        setFile(response.data.image);
-        setPreview(response.data.url);
+        setNama(response.data.data.nama);
+        setDeskripsi(response.data.data.deskripsi);
+        setFile(response.data.data.image);
+        setPreview(response.data.data.url);
     }
 
     const loadImage = (e) => {
@@ -35,24 +35,34 @@ const BlogEdit = () => {
     const updateBlog = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("nama", nama);
+        formData.append("name", nama);
         formData.append("deskripsi", deskripsi);
-        formData.append("file", file);
+        formData.append("image", file);
+        formData.append("url", preview);
         try {
-          await axios.patch(`http://localhost:3000/blog/${id}`, formData, {
-            headers: {
-                "Content-type": "multipart/form-data",
-              },
-          });
-          navigate("/admin/blog");
+            await axios.patch(`https://tough-teal-duck.cyclic.app/blog/${id}`, formData, {
+                headers: {
+                    "Content-type": "multipart/form-data",
+                },
+            });
+            navigate("/admin/blog");
         } catch (error) {
-          console.log(error);
+            console.log(error);
         }
-      };
+    };
       
     const navigate = useNavigate();
     const { id } = useParams();
 
+
+    // auth
+    const [isLogged, setLogged] = useState(!!localStorage.getItem("token"));
+
+    if (!isLogged) {
+        return <Navigate to="/login" replace={true} />;
+    }
+
+    if(isLogged)
     return (
         <div className="flex flex-col px-[20%] my-5">
             <h2 className="text-4xl py-5 text-center">Edit Blog</h2>

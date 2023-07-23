@@ -24,15 +24,20 @@ export default function DetailLayanan() {
   const [image, setImage] = useState("");
 
   useEffect(() => {
-      getLayananById();
-  }, []);
+    const getLayananById = async () => {
+      try {
+        const response = await axios.get(`https://tough-teal-duck.cyclic.app/layanan/${id}`);
+        setNama(response.data.data.nama);
+        setDeskripsi(response.data.data.deskripsi);
+        setImage(response.data.data.url);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-  const getLayananById = async () => {
-      const response = await axios.get(`http://localhost:3000/layanan/${id}`);
-      setNama(response.data.nama);
-      setDeskripsi(response.data.deskripsi);
-      setImage(response.data.url);
-  }
+    getLayananById();
+  }, [id]);
+
 
     return (
       <div className="container-fluid relative md:max-lg:top-2 lg:top-7 ">
@@ -42,10 +47,10 @@ export default function DetailLayanan() {
         {/* Layanan */}
         <section className="mt-20">
           <div className="max-md:mx-5 md:max-lg:mx-[10%] lg:mx-[20%] lg:mt-5 mb-5">
-            <div className="max-md:w-[100%] md:max-lg:w-[100%] lg:w-[60%] flex justify-center m-auto">
+            <div className="max-md:w-[100%] md:max-lg:w-[100%] lg:w-[60%] flex justify-center m-auto" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
               <img src={image} alt={nama} width="100%" />
             </div>
-            <div>
+            <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <h2 className="my-5 max-md:text-2xl md:text-3xl text-center text-cyan-700 font-semibold">{nama} </h2>
               <BreadCrumb keterangan={nama.substring(0, 30)} href="/layanan" menu="Layanan" />
               <p className="text-gray-500 mt-2">{deskripsi}</p>
