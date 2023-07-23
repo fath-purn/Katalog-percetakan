@@ -46,7 +46,7 @@ function Home() {
         <div className="flex items-center mt-20 mb-20 bg-white max-md:flex-col md:max-lg:flex-col lg:flex-wrap">
           <div className="flex-1 flex-col max-md:ml-5 md:ml-20">
             <h1 className="leading-normal max-md:text-4xl md:max-lg:text-5xl lg:text-5xl w-10/12 mb-4 tracking-normal font-medium text-gray-900">
-              Tempat Terbaik Mencetak Buku Yasin Terbaik, Murah dan Berkualitas
+              Tempat Mencetak Buku Yasin Terbaik, Murah dan Berkualitas
               !!
             </h1>
             <p className="mb-4 text-gray-500 text-xl w-10/12 ">

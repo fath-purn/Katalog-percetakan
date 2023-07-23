@@ -10,7 +10,7 @@ export default function CardFAQ(props){
             {/* <!-- Container for demo purpose --> */}
             <div class="container my-24 mx-auto md:px-6 xl:px-24">
             {/* <!-- Section: Design Block --> */}
-            <section class="mb-32">
+            <section class="mb-32" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <h2 class="mb-6 pl-6 text-3xl font-bold">Frequently asked questions</h2>
 
                 <div id="accordionFlushExample">

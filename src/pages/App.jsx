@@ -1,4 +1,5 @@
 
+
 import React from "react";
 import {BrowserRouter as Router, Routes, Route, BrowserRouter} from 'react-router-dom';
 import AOS from "aos";
@@ -40,9 +41,11 @@ import DetailLayanan from "./Detail/DetailLayanan";
 
 
 
+
+
 function App() {
     AOS.init();
-
+  
     return (
         // <BrowserRouter basename="/">
             <Router>
@@ -52,7 +55,6 @@ function App() {
                     {/* Produk */}
                     <Route path="/produk" element={<Produk />} />
                     <Route path="/produk/detail/:id" element={<DetailProduk />} />
-                    {/* <Route path="/search/:name" element={<SearchProduk />} /> */}
             
                     {/* Layanan */}
                     <Route path="/layanan" element={<Layanan />} />
